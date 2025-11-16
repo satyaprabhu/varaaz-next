@@ -8,8 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'varaaz-primary': '#8B5CF6',
-        'varaaz-dark': '#1F2937',
+        'sgma-navy': '#08415C',
+        'sgma-charcoal': '#283044',
+        'sgma-beige': '#F9DBBD',
+        'sgma-cream': '#FAF3DD',
+        'sgma-teal': '#7EBEC5',
+        'sgma-cta': '#2a4586',
+      },
+      fontFamily: {
+        belleza: ['var(--font-belleza)', 'sans-serif'],
       },
     },
   },

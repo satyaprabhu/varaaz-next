@@ -34,17 +34,17 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-slate-950 to-blue-950 relative z-10">
+    <section className="py-4 px-4 bg-sgma-beige relative z-10">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block mb-4 px-5 py-1 bg-yellow-200/20 border border-yellow-300/50 rounded-full text-xs font-semibold tracking-widest text-yellow-200 uppercase">
+          <div className="inline-block mb-4 px-5 py-1 bg-sgma-cta/10 border border-sgma-cta/30 rounded-full text-xs font-semibold tracking-widest text-sgma-cta uppercase">
             Student Stories
           </div>
-          <h2 className="text-5xl md:text-6xl font-black mb-4 uppercase tracking-tight text-white">
-            Transform Your<span className="text-yellow-300"> Consciousness</span>
+          <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight text-sgma-charcoal">
+            Transform Your<span className="text-sgma-navy"> Consciousness</span>
           </h2>
-          <p className="text-lg text-slate-200 max-w-2xl mx-auto">
+          <p className="text-lg text-sgma-charcoal/70 max-w-2xl mx-auto">
             Hear from students and seekers who have embarked on their transformative journey with SGMA.
           </p>
         </div>
@@ -54,28 +54,28 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="group relative">
               {/* Glow background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl blur-xl"></div>
 
               {/* Card */}
-              <div className="relative bg-slate-800/60 backdrop-blur-sm border-2 border-yellow-400/30 group-hover:border-yellow-300 rounded-xl p-6 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-white backdrop-blur-sm border-2 border-sgma-cta/20 group-hover:border-sgma-cta/40 rounded-xl p-6 transition-all duration-300 h-full flex flex-col">
                 {/* Star Rating */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">
+                    <span key={i} className="text-sgma-cta text-lg">
                       ★
                     </span>
                   ))}
                 </div>
 
                 {/* Quote */}
-                <p className="text-slate-200 italic mb-6 flex-grow leading-relaxed">
+                <p className="text-sgma-charcoal italic mb-6 flex-grow leading-relaxed">
                   "{testimonial.quote}"
                 </p>
 
                 {/* Author Info */}
-                <div className="pt-4 border-t border-yellow-400/20">
-                  <p className="font-bold text-white text-sm">{testimonial.author}</p>
-                  <p className="text-xs text-slate-400 uppercase tracking-widest font-semibold">
+                <div className="pt-4 border-t border-sgma-navy/20">
+                  <p className="font-bold text-sgma-charcoal text-sm">{testimonial.author}</p>
+                  <p className="text-xs text-sgma-charcoal/60 uppercase tracking-widest font-semibold">
                     {testimonial.title}
                   </p>
                 </div>
@@ -85,12 +85,12 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Divider */}
-        <div className="my-12 h-1 bg-gradient-to-r from-transparent via-yellow-400/60 to-transparent"></div>
+        <div className="my-12 h-1 bg-sgma-navy/30"></div>
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <p className="text-slate-300 mb-4">Ready to start your transformation?</p>
-          <a href="/bookings" className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 px-8 py-3 rounded-lg font-bold hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300">
+          <p className="text-sgma-charcoal/70 mb-4">Ready to start your transformation?</p>
+          <a href="/bookings" className="inline-block bg-sgma-cta text-white px-8 py-3 rounded-lg font-bold hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300">
             Book Your Session Today
           </a>
         </div>

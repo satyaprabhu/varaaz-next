@@ -42,7 +42,7 @@ export default function ContactPage() {
     {
       id: 6,
       question: "Do you offer mentorship after the course?",
-      answer: "Yes! All courses include mentorship access for 2-3 months post-completion, plus lifetime access to our alumni community. You'll also receive a certificate of completion and exhibition opportunities."
+      answer: "Yes! All courses include mentorship access for 2-3 months post-completion, plus lifetime access to our alumni community. You will also receive a certificate of completion and exhibition opportunities."
     },
     {
       id: 7,
@@ -84,7 +84,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 relative text-white">
+    <div className="min-h-screen bg-sgma-cream relative text-sgma-charcoal">
       {/* Sri Chakra Mandala Background */}
       <div className="fixed inset-0 opacity-5 pointer-events-none z-0">
         <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -143,14 +143,14 @@ export default function ContactPage() {
 
       <div className="py-20 px-4 relative z-10">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-black text-center mb-4 uppercase tracking-tight text-white">Get In Touch</h1>
-          <p className="text-center text-slate-200 mb-12 text-lg">
+          <h1 className="text-5xl md:text-6xl font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">Get In Touch</h1>
+          <p className="text-center text-sgma-charcoal mb-12 text-lg">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
 
-          <form onSubmit={handleSubmit} className="bg-slate-800/60 backdrop-blur-sm border border-yellow-400/30 rounded-lg p-8">
+          <form onSubmit={handleSubmit} className="bg-white border border-sgma-navy/20 rounded-lg p-8 shadow-sm">
             <div className="mb-6">
-              <label htmlFor="name" className="block text-sm font-semibold mb-2 text-slate-200">
+              <label htmlFor="name" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
                 Name
               </label>
               <input
@@ -158,12 +158,12 @@ export default function ContactPage() {
                 name="name"
                 type="text"
                 required
-                className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="email" className="block text-sm font-semibold mb-2 text-slate-200">
+              <label htmlFor="email" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
                 Email
               </label>
               <input
@@ -171,12 +171,12 @@ export default function ContactPage() {
                 name="email"
                 type="email"
                 required
-                className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-slate-200">
+              <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
                 Subject
               </label>
               <input
@@ -184,12 +184,12 @@ export default function ContactPage() {
                 name="subject"
                 type="text"
                 required
-                className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-semibold mb-2 text-slate-200">
+              <label htmlFor="message" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
                 Message
               </label>
               <textarea
@@ -197,7 +197,7 @@ export default function ContactPage() {
                 name="message"
                 rows={5}
                 required
-                className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
               />
             </div>
 
@@ -210,7 +210,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 py-3 rounded-lg font-bold hover:shadow-lg hover:shadow-yellow-400/50 disabled:opacity-50 transition-all duration-300"
+              className="w-full bg-sgma-cta text-white py-3 rounded-lg font-bold hover:shadow-lg hover:shadow-sgma-cta/30 disabled:opacity-50 transition-all duration-300"
             >
               {loading ? 'Sending...' : 'Send Message'}
             </button>
@@ -218,10 +218,10 @@ export default function ContactPage() {
 
           {/* FAQ Section */}
           <div id="faqs" className="mt-20">
-            <h2 className="text-4xl md:text-5xl font-black text-center mb-4 uppercase tracking-tight text-white">
-              Frequently Asked <span className="text-yellow-300">Questions</span>
+            <h2 className="text-4xl md:text-5xl font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">
+              Frequently Asked <span className="text-sgma-navy">Questions</span>
             </h2>
-            <p className="text-center text-slate-200 mb-12 text-lg">
+            <p className="text-center text-sgma-charcoal mb-12 text-lg">
               Can't find what you're looking for? Reach out to us directly above.
             </p>
 
@@ -229,16 +229,16 @@ export default function ContactPage() {
               {faqs.map((faq) => (
                 <div
                   key={faq.id}
-                  className="bg-slate-800/60 backdrop-blur-sm border border-yellow-400/30 rounded-lg overflow-hidden hover:border-yellow-300/60 transition-all duration-300"
+                  className="bg-white border border-sgma-navy/20 rounded-lg overflow-hidden hover:border-sgma-navy hover:shadow-sm transition-all duration-300"
                 >
                   <button
                     onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-yellow-400/5 transition-colors duration-200"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-sgma-navy/5 transition-colors duration-200"
                   >
-                    <h3 className="text-lg font-bold text-white uppercase tracking-tight pr-4">
+                    <h3 className="text-lg font-bold text-sgma-charcoal uppercase tracking-tight pr-4">
                       {faq.question}
                     </h3>
-                    <div className="flex-shrink-0 text-yellow-300 text-2xl font-light transition-transform duration-300" style={{
+                    <div className="flex-shrink-0 text-sgma-navy text-2xl font-light transition-transform duration-300" style={{
                       transform: expandedFAQ === faq.id ? 'rotate(180deg)' : 'rotate(0deg)'
                     }}>
                       ▼
@@ -246,8 +246,8 @@ export default function ContactPage() {
                   </button>
 
                   {expandedFAQ === faq.id && (
-                    <div className="px-6 py-5 bg-slate-800/30 border-t border-yellow-400/20">
-                      <p className="text-slate-200 leading-relaxed">
+                    <div className="px-6 py-5 bg-sgma-cream border-t border-sgma-navy/20">
+                      <p className="text-sgma-charcoal leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>

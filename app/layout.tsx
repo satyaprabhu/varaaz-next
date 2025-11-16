@@ -1,7 +1,14 @@
 import type { Metadata } from 'next'
+import { Belleza } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
+const belleza = Belleza({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-belleza',
+})
 
 export const metadata: Metadata = {
   title: 'SGMA - Art & Learning',
@@ -14,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="bg-white text-gray-900">
+    <html lang="en" className={belleza.variable}>
+      <body className="bg-white text-gray-900 font-belleza">
         <Header />
         <main className="min-h-screen">
           {children}

@@ -99,13 +99,13 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
   }
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-blue-950 to-slate-950 relative z-10">
+    <section className="py-24 px-4 bg-sgma-beige relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black mb-4 uppercase tracking-tight text-white">
-            Featured<span className="text-yellow-300"> Works</span>
+          <h2 className="text-5xl md:text-6xl font-black mb-4 uppercase tracking-tight text-sgma-charcoal">
+            Featured<span className="text-sgma-navy"> Works</span>
           </h2>
-          <p className="text-slate-200 text-lg max-w-2xl mx-auto">
+          <p className="text-sgma-charcoal/70 text-lg max-w-2xl mx-auto">
             Explore a curated collection of mandalas and Vedic science artworks that showcase the transformative power of creation.
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
             >
               {/* Image Area with Overlay */}
               <div
-                className={`relative w-full ${getHeightClasses(item.size)} bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center overflow-hidden`}
+                className={`relative w-full ${getHeightClasses(item.size)} bg-sgma-cream flex items-center justify-center overflow-hidden`}
                 style={{ borderRadius: '2.5rem' }}
               >
                 {/* Placeholder Mandala Icon */}
@@ -135,63 +135,63 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
                 </div>
 
                 {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-slate-700/20 to-slate-900/30"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 via-sgma-cream/20 to-sgma-navy/10"></div>
 
                 {/* Text Overlay - Appears on Hover */}
                 <div
-                  className={`absolute inset-0 flex flex-col items-start justify-end p-6 bg-gradient-to-t from-slate-950/95 via-slate-900/70 to-transparent transition-all duration-300 ${
+                  className={`absolute inset-0 flex flex-col items-start justify-end p-6 bg-gradient-to-t from-sgma-navy/95 via-sgma-navy/70 to-transparent transition-all duration-300 ${
                     hoveredId === item.id ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
-                  <div className="inline-block mb-3 px-2 py-1 bg-yellow-400/50 rounded-full border border-yellow-300/70">
-                    <p className="text-xs font-bold text-yellow-900 uppercase tracking-widest">
+                  <div className="inline-block mb-3 px-2 py-1 bg-sgma-cta/50 rounded-full border border-sgma-cta/70">
+                    <p className="text-xs font-bold text-white uppercase tracking-widest">
                       {item.category}
                     </p>
                   </div>
                   <h3 className="text-xl md:text-2xl font-black uppercase tracking-wide mb-2 text-white leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-200 line-clamp-2">
+                  <p className="text-sm text-sgma-cream line-clamp-2">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Floating Badge - Always Visible */}
-                <div className="absolute top-4 right-4 px-3 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-slate-900 font-bold text-xs uppercase tracking-widest">
+                <div className="absolute top-4 right-4 px-3 py-2 bg-sgma-cta rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white font-bold text-xs uppercase tracking-widest">
                     View
                   </span>
                 </div>
 
                 {/* Border Glow on Hover */}
-                <div className="absolute inset-0 border-2 border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ borderRadius: '2.5rem' }}></div>
+                <div className="absolute inset-0 border-2 border-sgma-cta opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ borderRadius: '2.5rem' }}></div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="my-16 h-1 bg-gradient-to-r from-transparent via-yellow-400/60 to-transparent"></div>
+        <div className="my-16 h-1 bg-sgma-navy/30"></div>
 
         {/* Call to Action Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-4xl font-black uppercase tracking-tight mb-6 text-white">
-              Create Your<span className="text-yellow-300"> Own</span> Masterpiece
+            <h3 className="text-4xl font-black uppercase tracking-tight mb-6 text-sgma-charcoal">
+              Create Your<span className="text-sgma-navy"> Own</span> Masterpiece
             </h3>
-            <p className="text-slate-200 text-lg leading-relaxed mb-8">
+            <p className="text-sgma-charcoal/70 text-lg leading-relaxed mb-8">
               Every artwork in this collection was created by seekers like you—people who discovered the transformative power of Vedic science and mandala creation. Your journey could start today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="/courses"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-lg font-black uppercase tracking-widest hover:shadow-2xl transition-all duration-300 text-center"
+                className="inline-block px-8 py-4 bg-sgma-cta text-white rounded-lg font-black uppercase tracking-widest hover:shadow-2xl transition-all duration-300 text-center"
               >
                 Explore Courses
               </a>
               <a
                 href="/about"
-                className="inline-block px-8 py-4 border-2 border-yellow-400 text-yellow-300 rounded-lg font-black uppercase tracking-widest hover:bg-yellow-400/10 transition-all duration-300 text-center"
+                className="inline-block px-8 py-4 border-2 border-sgma-cta text-sgma-cta rounded-lg font-black uppercase tracking-widest hover:bg-sgma-cta/10 transition-all duration-300 text-center"
               >
                 Learn More
               </a>
@@ -199,27 +199,27 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-6 bg-slate-800/60 backdrop-blur-sm border border-yellow-400/30 rounded-lg hover:border-yellow-300 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
-              <div className="text-4xl font-black text-yellow-400 mb-2">500+</div>
-              <p className="text-slate-200 text-sm uppercase tracking-widest">
+            <div className="p-6 bg-white backdrop-blur-sm border border-sgma-cta/30 rounded-lg hover:border-sgma-cta/50 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
+              <div className="text-4xl font-black text-sgma-cta mb-2">500+</div>
+              <p className="text-sgma-charcoal/70 text-sm uppercase tracking-widest">
                 Hand-Drawn Mandalas
               </p>
             </div>
-            <div className="p-6 bg-slate-800/60 backdrop-blur-sm border border-yellow-400/30 rounded-lg hover:border-yellow-300 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
-              <div className="text-4xl font-black text-yellow-400 mb-2">10+</div>
-              <p className="text-slate-200 text-sm uppercase tracking-widest">
+            <div className="p-6 bg-white backdrop-blur-sm border border-sgma-cta/30 rounded-lg hover:border-sgma-cta/50 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
+              <div className="text-4xl font-black text-sgma-cta mb-2">10+</div>
+              <p className="text-sgma-charcoal/70 text-sm uppercase tracking-widest">
                 Years Teaching
               </p>
             </div>
-            <div className="p-6 bg-slate-800/60 backdrop-blur-sm border border-yellow-400/30 rounded-lg hover:border-yellow-300 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
-              <div className="text-4xl font-black text-yellow-400 mb-2">100%</div>
-              <p className="text-slate-200 text-sm uppercase tracking-widest">
+            <div className="p-6 bg-white backdrop-blur-sm border border-sgma-cta/30 rounded-lg hover:border-sgma-cta/50 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
+              <div className="text-4xl font-black text-sgma-cta mb-2">100%</div>
+              <p className="text-sgma-charcoal/70 text-sm uppercase tracking-widest">
                 Student Success
               </p>
             </div>
-            <div className="p-6 bg-slate-800/60 backdrop-blur-sm border border-yellow-400/30 rounded-lg hover:border-yellow-300 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
-              <div className="text-4xl font-black text-yellow-400 mb-2">∞</div>
-              <p className="text-slate-200 text-sm uppercase tracking-widest">
+            <div className="p-6 bg-white backdrop-blur-sm border border-sgma-cta/30 rounded-lg hover:border-sgma-cta/50 transition-all duration-300" style={{ borderRadius: '1.5rem' }}>
+              <div className="text-4xl font-black text-sgma-cta mb-2">∞</div>
+              <p className="text-sgma-charcoal/70 text-sm uppercase tracking-widest">
                 Lifetime Support
               </p>
             </div>

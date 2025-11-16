@@ -60,7 +60,7 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
     <form onSubmit={handleFallbackSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold mb-2 text-slate-100">
+          <label htmlFor="name" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
             Your Name
           </label>
           <input
@@ -69,12 +69,12 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
             type="text"
             required
             placeholder="John Doe"
-            className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+            className="w-full px-4 py-2 bg-white border border-sgma-cta/30 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-cta/30 focus:border-sgma-cta/50"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold mb-2 text-slate-100">
+          <label htmlFor="email" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
             Email
           </label>
           <input
@@ -83,14 +83,14 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
             type="email"
             required
             placeholder="john@example.com"
-            className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+            className="w-full px-4 py-2 bg-white border border-sgma-cta/30 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-cta/30 focus:border-sgma-cta/50"
           />
         </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="date" className="block text-sm font-semibold mb-2 text-slate-100">
+          <label htmlFor="date" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
             Preferred Date
           </label>
           <input
@@ -98,12 +98,12 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
             name="date"
             type="date"
             required
-            className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+            className="w-full px-4 py-2 bg-white border border-sgma-cta/30 rounded-lg text-sgma-charcoal focus:outline-none focus:ring-2 focus:ring-sgma-cta/30 focus:border-sgma-cta/50"
           />
         </div>
 
         <div>
-          <label htmlFor="time" className="block text-sm font-semibold mb-2 text-slate-100">
+          <label htmlFor="time" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
             Preferred Time
           </label>
           <input
@@ -111,13 +111,13 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
             name="time"
             type="time"
             required
-            className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+            className="w-full px-4 py-2 bg-white border border-sgma-cta/30 rounded-lg text-sgma-charcoal focus:outline-none focus:ring-2 focus:ring-sgma-cta/30 focus:border-sgma-cta/50"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="topic" className="block text-sm font-semibold mb-2 text-slate-100">
+        <label htmlFor="topic" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
           Session Topic
         </label>
         <select
@@ -126,7 +126,7 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
           required
           value={selectedTopic}
           onChange={(e) => setSelectedTopic(e.target.value)}
-          className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+          className="w-full px-4 py-2 bg-white border border-sgma-cta/30 rounded-lg text-sgma-charcoal focus:outline-none focus:ring-2 focus:ring-sgma-cta/30 focus:border-sgma-cta/50"
         >
           <option value="">Select a topic</option>
           <option value="vedic-fundamentals">Vedic Science Fundamentals</option>
@@ -137,20 +137,20 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
       </div>
 
       {selectedTopic && (
-        <div className="bg-yellow-400/10 border-2 border-yellow-400/30 rounded-lg p-4">
-          <label className="block text-sm font-semibold mb-3 text-slate-100">
+        <div className="bg-sgma-navy/5 border-2 border-sgma-navy/30 rounded-lg p-4">
+          <label className="block text-sm font-semibold mb-3 text-sgma-charcoal">
             🎨 Premium Art Kit Add-On - ₹3,000
           </label>
-          <p className="text-xs text-slate-300 mb-4">Professional-grade supplies & tools including premium brushes, quality papers, and specialty inks.</p>
+          <p className="text-xs text-sgma-charcoal/70 mb-4">Professional-grade supplies & tools including premium brushes, quality papers, and specialty inks.</p>
           <div className="flex gap-4">
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="radio"
                 name="addon"
                 value="yes"
-                className="w-4 h-4 accent-yellow-400"
+                className="w-4 h-4 accent-sgma-cta"
               />
-              <span className="text-sm text-slate-100">Yes, add to my session</span>
+              <span className="text-sm text-sgma-charcoal">Yes, add to my session</span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
               <input
@@ -158,16 +158,16 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
                 name="addon"
                 value="no"
                 defaultChecked
-                className="w-4 h-4 accent-yellow-400"
+                className="w-4 h-4 accent-sgma-cta"
               />
-              <span className="text-sm text-slate-100">No, skip this</span>
+              <span className="text-sm text-sgma-charcoal">No, skip this</span>
             </label>
           </div>
         </div>
       )}
 
       <div>
-        <label htmlFor="notes" className="block text-sm font-semibold mb-2 text-slate-100">
+        <label htmlFor="notes" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
           Additional Notes
         </label>
         <textarea
@@ -175,12 +175,12 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
           name="notes"
           rows={3}
           placeholder="Tell us about your interests and what you'd like to focus on..."
-          className="w-full px-4 py-2 bg-slate-700/50 border border-yellow-400/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+          className="w-full px-4 py-2 bg-white border border-sgma-cta/30 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-cta/30 focus:border-sgma-cta/50"
         />
       </div>
 
       {message && (
-        <p className={`text-center font-semibold ${message.includes('success') || message.includes('submitted') ? 'text-green-400' : 'text-red-400'}`}>
+        <p className={`text-center font-semibold ${message.includes('success') || message.includes('submitted') ? 'text-sgma-cta' : 'text-sgma-charcoal'}`}>
           {message}
         </p>
       )}
@@ -188,12 +188,12 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/50 disabled:opacity-50 transition-all duration-300"
+        className="w-full bg-sgma-cta text-white py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-sgma-cta/50 disabled:opacity-50 transition-all duration-300"
       >
         {loading ? 'Submitting...' : 'Request Session'}
       </button>
 
-      <p className="text-xs text-slate-300 text-center">
+      <p className="text-xs text-sgma-charcoal/70 text-center">
         We'll contact you to confirm your preferred time slot and payment details.
       </p>
     </form>

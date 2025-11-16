@@ -162,7 +162,7 @@ export default function CollectionPage() {
     : portfolioItems.filter(item => item.collection === selectedCollection)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 relative text-white">
+    <div className="min-h-screen bg-sgma-beige relative text-sgma-charcoal">
       {/* Sri Chakra Mandala Background */}
       <div className="fixed inset-0 opacity-5 pointer-events-none z-0">
         <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -222,10 +222,10 @@ export default function CollectionPage() {
       <div className="py-20 px-4 relative z-10">
         {/* Page Header */}
         <div className="max-w-6xl mx-auto mb-16">
-          <h1 className="text-5xl md:text-6xl font-black text-center mb-4 uppercase tracking-tight text-white">
-            Our<span className="text-yellow-300"> Collections</span>
+          <h1 className="text-5xl md:text-6xl font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">
+            Our Collections
           </h1>
-          <p className="text-center text-slate-200 text-lg max-w-3xl mx-auto">
+          <p className="text-center text-sgma-charcoal-200 text-lg max-w-3xl mx-auto">
             Explore curated collections from Flower of Life Mastery, Sacred Torus Foundations, and 8 Mandala Journey. Each collection showcases the depth and transformative practice of sacred geometry and mandala creation.
           </p>
         </div>
@@ -239,8 +239,8 @@ export default function CollectionPage() {
                 onClick={() => setSelectedCollection(collection)}
                 className={`px-6 py-2 rounded-lg font-semibold uppercase tracking-widest text-sm transition-all duration-300 ${
                   selectedCollection === collection
-                    ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 shadow-lg shadow-yellow-400/50'
-                    : 'bg-slate-800/60 border-2 border-yellow-400/30 text-yellow-300 hover:border-yellow-300'
+                    ? 'bg-sgma-cta text-white shadow-lg shadow-sgma-cta/50'
+                    : 'bg-white/60 border-2 border-sgma-cta/30 text-sgma-cta hover:border-sgma-cta'
                 }`}
               >
                 {collection}
@@ -261,7 +261,7 @@ export default function CollectionPage() {
                 onClick={() => setSelectedItem(item)}
               >
                 {/* Card Container */}
-                <div className="relative w-full h-80 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center overflow-hidden rounded-2xl">
+                <div className="relative w-full h-80 bg-sgma-charcoal/10 flex items-center justify-center overflow-hidden rounded-2xl">
                   {/* Background Image */}
                   <img
                     src={item.image}
@@ -270,43 +270,43 @@ export default function CollectionPage() {
                   />
 
                   {/* Placeholder Mandala Icon (fallback) */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-700 to-slate-800 z-0">
+                  <div className="absolute inset-0 flex items-center justify-center bg-sgma-beige/50 z-0">
                     <div className="text-6xl opacity-20 group-hover:opacity-40 transition-opacity duration-300">
                       🌀
                     </div>
                   </div>
 
                   {/* Gradient Overlay Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-slate-700/20 to-slate-900/30 z-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/5 to-sgma-navy/5 z-20"></div>
 
                   {/* Text Overlay - Appears on Hover */}
                   <div
-                    className={`absolute inset-0 flex flex-col items-start justify-end p-6 bg-gradient-to-t from-slate-950/95 via-slate-900/70 to-transparent transition-all duration-300 z-30 ${
+                    className={`absolute inset-0 flex flex-col items-start justify-end p-6 bg-gradient-to-t from-sgma-navy/95 via-sgma-navy/70 to-transparent transition-all duration-300 z-30 ${
                       hoveredId === item.id ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
-                    <div className="inline-block mb-3 px-3 py-1 bg-yellow-400/50 rounded-full border border-yellow-300/70">
-                      <p className="text-xs font-bold text-yellow-900 uppercase tracking-widest">
+                    <div className="inline-block mb-3 px-3 py-1 bg-sgma-cta/20 rounded-full border border-sgma-cta/50">
+                      <p className="text-xs font-bold text-sgma-cta uppercase tracking-widest">
                         {item.collection}
                       </p>
                     </div>
                     <h3 className="text-xl font-black uppercase tracking-wide mb-2 text-white leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-200 line-clamp-2">
+                    <p className="text-sm text-white/80 line-clamp-2">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Floating Badge - Always Visible */}
-                  <div className="absolute top-4 right-4 px-3 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-slate-900 font-bold text-xs uppercase tracking-widest">
+                  <div className="absolute top-4 right-4 px-3 py-2 bg-sgma-cta rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white font-bold text-xs uppercase tracking-widest">
                       View
                     </span>
                   </div>
 
                   {/* Border Glow on Hover */}
-                  <div className="absolute inset-0 border-2 border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                  <div className="absolute inset-0 border-2 border-sgma-cta opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                 </div>
               </div>
             ))}
@@ -315,7 +315,7 @@ export default function CollectionPage() {
           {/* Empty State */}
           {filteredItems.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-slate-300 text-lg">No works found in this category.</p>
+              <p className="text-sgma-charcoal-300 text-lg">No works found in this category.</p>
             </div>
           )}
         </div>
@@ -327,13 +327,13 @@ export default function CollectionPage() {
             onClick={() => setSelectedItem(null)}
           >
             <div
-              className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative border border-yellow-400/30"
+              className="bg-sgma-beige rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative border border-sgma-navy/20"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-yellow-400 text-slate-900 flex items-center justify-center font-bold text-xl hover:bg-yellow-300 transition-colors"
+                className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-sgma-cta text-white flex items-center justify-center font-bold text-xl hover:shadow-lg hover:shadow-sgma-cta/50 transition-all"
               >
                 ✕
               </button>
@@ -342,16 +342,16 @@ export default function CollectionPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
                 {/* Image Section */}
                 <div className="flex flex-col gap-4">
-                  <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800">
+                  <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden bg-sgma-charcoal/10">
                     <img
                       src={selectedItem.image}
                       alt={selectedItem.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-slate-700/20 to-slate-900/30"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/5 to-sgma-navy/5"></div>
                   </div>
-                  <div className="inline-block px-4 py-2 bg-yellow-400/20 rounded-lg border border-yellow-400/50">
-                    <p className="text-yellow-300 font-bold uppercase tracking-widest text-sm">
+                  <div className="inline-block px-4 py-2 bg-sgma-cta/20 rounded-lg border border-sgma-cta/50">
+                    <p className="text-sgma-cta font-bold uppercase tracking-widest text-sm">
                       {selectedItem.collection}
                     </p>
                   </div>
@@ -359,29 +359,29 @@ export default function CollectionPage() {
 
                 {/* Text Section */}
                 <div className="flex flex-col justify-start">
-                  <h2 className="text-4xl font-black uppercase tracking-tight mb-4 text-white">
+                  <h2 className="text-4xl font-black uppercase tracking-tight mb-4 text-sgma-navy">
                     {selectedItem.title}
                   </h2>
-                  <p className="text-lg text-yellow-300 font-semibold mb-6 leading-relaxed">
+                  <p className="text-lg text-sgma-cta font-semibold mb-6 leading-relaxed">
                     {selectedItem.description}
                   </p>
-                  <div className="border-t border-yellow-400/30 pt-6">
-                    <h3 className="text-sm font-bold uppercase tracking-widest text-yellow-300 mb-4">
+                  <div className="border-t border-sgma-navy/20 pt-6">
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-sgma-navy mb-4">
                       About This Work
                     </h3>
-                    <p className="text-slate-200 leading-relaxed text-base">
+                    <p className="text-sgma-charcoal leading-relaxed text-base">
                       {selectedItem.longDescription}
                     </p>
                   </div>
 
                   {/* Related Course CTA */}
-                  <div className="mt-8 pt-6 border-t border-yellow-400/30">
-                    <p className="text-sm text-slate-300 mb-4">
+                  <div className="mt-8 pt-6 border-t border-sgma-navy/20">
+                    <p className="text-sm text-sgma-charcoal mb-4">
                       Want to learn how to create works like this?
                     </p>
                     <a
                       href="/courses"
-                      className="inline-block px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-lg font-black uppercase tracking-widest hover:shadow-lg transition-all duration-300"
+                      className="inline-block px-6 py-3 bg-sgma-cta text-white rounded-lg font-black uppercase tracking-widest hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300"
                     >
                       Explore Courses
                     </a>
@@ -393,26 +393,26 @@ export default function CollectionPage() {
         )}
 
         {/* Divider */}
-        <div className="max-w-6xl mx-auto mt-20 mb-12 h-1 bg-gradient-to-r from-transparent via-yellow-400/60 to-transparent"></div>
+        <div className="max-w-6xl mx-auto mt-20 mb-12 h-1 bg-gradient-to-r from-transparent via-sgma-cta/60 to-transparent"></div>
 
         {/* CTA Section */}
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-black uppercase tracking-tight mb-6 text-white">
-            Ready to Explore Your<span className="text-yellow-300"> Journey</span>?
+          <h2 className="text-4xl font-black uppercase tracking-tight mb-6 text-sgma-charcoal">
+            Ready to Explore Your<span className="text-sgma-cta"> Journey</span>?
           </h2>
-          <p className="text-slate-200 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-sgma-charcoal-200 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
             Discover the transformative power of Vedic science, sacred geometry, and mandala creation. Our three comprehensive courses guide you through deepening your practice and artistic expression. Begin your journey today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/courses"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-lg font-black uppercase tracking-widest hover:shadow-2xl transition-all duration-300"
+              className="inline-block px-8 py-4 bg-sgma-cta text-white rounded-lg font-black uppercase tracking-widest hover:shadow-2xl hover:shadow-sgma-cta/50 transition-all duration-300"
             >
               Explore Courses
             </a>
             <a
               href="/bookings"
-              className="inline-block px-8 py-4 border-2 border-yellow-400 text-yellow-300 rounded-lg font-black uppercase tracking-widest hover:bg-yellow-400/10 transition-all duration-300"
+              className="inline-block px-8 py-4 border-2 border-sgma-cta text-sgma-cta rounded-lg font-black uppercase tracking-widest hover:bg-sgma-cta/10 transition-all duration-300"
             >
               Book a Session
             </a>

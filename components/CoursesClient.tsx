@@ -77,44 +77,44 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
     <>
       {/* Compare Table Section */}
       <div className="mb-16">
-        <h3 className="text-2xl md:text-3xl font-black mb-8 text-white uppercase tracking-wide">Courses Overview</h3>
+        <h3 className="text-2xl md:text-3xl font-black mb-8 text-sgma-charcoal uppercase tracking-wide">Courses Overview</h3>
 
         {/* Mobile Card View */}
         <div className="md:hidden space-y-4">
           {courses.map((c) => (
-            <div key={c.title} className="bg-slate-800/60 backdrop-blur-sm rounded-xl shadow-lg border-2 border-yellow-400/30 hover:border-yellow-300 p-5 transition-all duration-300">
+            <div key={c.title} className="bg-white backdrop-blur-sm rounded-xl shadow-lg border-2 border-sgma-cta/30 hover:border-sgma-cta/50 p-5 transition-all duration-300">
               {/* Course Name */}
-              <h4 className="text-lg font-black text-yellow-300 uppercase tracking-wide mb-4">{c.title}</h4>
+              <h4 className="text-lg font-black text-sgma-cta uppercase tracking-wide mb-4">{c.title}</h4>
 
               {/* Duration & Sessions */}
-              <div className="grid grid-cols-2 gap-4 mb-4 pb-4 border-b border-slate-700">
+              <div className="grid grid-cols-2 gap-4 mb-4 pb-4 border-b border-sgma-navy/20">
                 <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Duration</p>
-                  <p className="text-base font-black text-white">{c.duration}</p>
+                  <p className="text-xs font-bold text-sgma-charcoal/60 uppercase tracking-widest mb-1">Duration</p>
+                  <p className="text-base font-black text-sgma-charcoal">{c.duration}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Sessions</p>
-                  <p className="text-base font-black text-white">{c.sessions}</p>
+                  <p className="text-xs font-bold text-sgma-charcoal/60 uppercase tracking-widest mb-1">Sessions</p>
+                  <p className="text-base font-black text-sgma-charcoal">{c.sessions}</p>
                 </div>
               </div>
 
               {/* Investment */}
-              <div className="mb-4 pb-4 border-b border-slate-700">
-                <p className="text-xs font-bold text-yellow-300 uppercase tracking-widest mb-2">Investment</p>
+              <div className="mb-4 pb-4 border-b border-sgma-navy/20">
+                <p className="text-xs font-bold text-sgma-cta uppercase tracking-widest mb-2">Investment</p>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-black text-yellow-300">₹{c.price_early.toLocaleString()}</span>
-                  <span className="text-xs text-slate-400">Early Bird</span>
+                  <span className="text-2xl font-black text-sgma-cta">₹{c.price_early.toLocaleString()}</span>
+                  <span className="text-xs text-sgma-charcoal/60">Early Bird</span>
                 </div>
-                <p className="text-xs text-slate-400 font-semibold mt-1">Regular: ₹{c.price_regular.toLocaleString()}</p>
+                <p className="text-xs text-sgma-charcoal/60 font-semibold mt-1">Regular: ₹{c.price_regular.toLocaleString()}</p>
               </div>
 
               {/* Key Features */}
-              <div className="mb-4 pb-4 border-b border-slate-700">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Key Features</p>
-                <ul className="space-y-2 text-sm text-slate-200">
+              <div className="mb-4 pb-4 border-b border-sgma-navy/20">
+                <p className="text-xs font-bold text-sgma-charcoal/60 uppercase tracking-widest mb-2">Key Features</p>
+                <ul className="space-y-2 text-sm text-sgma-charcoal">
                   {getCourseFeatures(c.title).map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-yellow-400 font-bold flex-shrink-0">✓</span>
+                      <span className="text-sgma-cta font-bold flex-shrink-0">✓</span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -124,7 +124,7 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
               {/* CTA Button */}
               <button
                 onClick={() => scrollToCourse(c.title)}
-                className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300"
+                className="w-full bg-sgma-cta text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300"
               >
                 View Full Details
               </button>
@@ -133,10 +133,10 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
         </div>
 
         {/* Desktop Table View */}
-        <div className="hidden md:block overflow-x-auto rounded-xl shadow-lg border-2 border-yellow-400/30">
-          <table className="w-full bg-slate-800/60 backdrop-blur-sm">
+        <div className="hidden md:block overflow-x-auto rounded-xl shadow-lg border-2 border-sgma-cta/30">
+          <table className="w-full bg-white backdrop-blur-sm">
             <thead>
-              <tr className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-400 text-slate-900">
+              <tr className="bg-sgma-navy text-white">
                 <th className="px-6 py-4 text-left font-black uppercase tracking-wide text-sm">Course Name</th>
                 <th className="px-6 py-4 text-left font-black uppercase tracking-wide text-sm">Duration & Sessions</th>
                 <th className="px-6 py-4 text-left font-black uppercase tracking-wide text-sm">Investment</th>
@@ -146,28 +146,28 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
             </thead>
             <tbody>
               {courses.map((c, idx) => (
-                <tr key={c.title} className={`border-t border-yellow-400/20 ${idx % 2 === 0 ? 'bg-slate-800/40' : 'bg-slate-700/40'} hover:bg-yellow-400/10 transition-colors`}>
+                <tr key={c.title} className={`border-t border-sgma-navy/20 ${idx % 2 === 0 ? 'bg-sgma-beige/30' : 'bg-white'} hover:bg-sgma-cta/5 transition-colors`}>
                   <td className="px-6 py-4">
-                    <p className="font-bold text-white uppercase tracking-wide text-sm">{c.title}</p>
+                    <p className="font-bold text-sgma-charcoal uppercase tracking-wide text-sm">{c.title}</p>
                   </td>
                   <td className="px-6 py-4">
                     <div className="space-y-1">
-                      <p className="text-xs text-slate-300 font-semibold">Duration: <span className="font-black text-white">{c.duration}</span></p>
-                      <p className="text-xs text-slate-300 font-semibold">Sessions: <span className="font-black text-white">{c.sessions}</span></p>
+                      <p className="text-xs text-sgma-charcoal/70 font-semibold">Duration: <span className="font-black text-sgma-charcoal">{c.duration}</span></p>
+                      <p className="text-xs text-sgma-charcoal/70 font-semibold">Sessions: <span className="font-black text-sgma-charcoal">{c.sessions}</span></p>
                     </div>
                   </td>
                   <td className="px-6 py-4">
                     <div>
-                      <p className="text-xs text-yellow-300 font-bold uppercase tracking-widest mb-1">Early Bird</p>
-                      <p className="text-lg font-black text-yellow-300">₹{c.price_early.toLocaleString()}</p>
-                      <p className="text-xs text-slate-300 font-semibold mt-1">Reg: ₹{c.price_regular.toLocaleString()}</p>
+                      <p className="text-xs text-sgma-cta font-bold uppercase tracking-widest mb-1">Early Bird</p>
+                      <p className="text-lg font-black text-sgma-cta">₹{c.price_early.toLocaleString()}</p>
+                      <p className="text-xs text-sgma-charcoal/70 font-semibold mt-1">Reg: ₹{c.price_regular.toLocaleString()}</p>
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <ul className="space-y-1 text-sm text-slate-200">
+                    <ul className="space-y-1 text-sm text-sgma-charcoal">
                       {getCourseFeatures(c.title).map((feature, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="text-yellow-400 font-bold flex-shrink-0">✓</span>
+                          <span className="text-sgma-cta font-bold flex-shrink-0">✓</span>
                           <span className="text-xs">{feature}</span>
                         </li>
                       ))}
@@ -176,7 +176,7 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
                   <td className="px-6 py-4 text-center">
                     <button
                       onClick={() => scrollToCourse(c.title)}
-                      className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-lg font-bold uppercase tracking-widest hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 text-xs whitespace-nowrap"
+                      className="bg-sgma-cta text-white px-4 py-2 rounded-lg font-bold uppercase tracking-widest hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300 text-xs whitespace-nowrap"
                     >
                       View
                     </button>
@@ -190,13 +190,13 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
 
       {/* Bundle Offer Section */}
       <div className="mb-16">
-        <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-yellow-400/30">
+        <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-sgma-cta/30">
           {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-800/80 via-slate-750/80 to-slate-800/80 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-sgma-beige/80 backdrop-blur-sm"></div>
 
           {/* Decorative Elements */}
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-yellow-400/5 rounded-full blur-2xl"></div>
-          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-yellow-400/5 rounded-full blur-2xl"></div>
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-sgma-cta/5 rounded-full blur-2xl"></div>
+          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-sgma-cta/5 rounded-full blur-2xl"></div>
 
           {/* Content */}
           <div className="relative p-6 md:p-8">
@@ -204,30 +204,30 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
               {/* Left Section - Text */}
               <div className="flex-1 text-center md:text-left">
                 {/* Badge */}
-                <div className="inline-block mb-3 px-4 py-1 bg-yellow-400/20 backdrop-blur-sm rounded-full text-xs font-black uppercase tracking-widest text-yellow-300 border border-yellow-400/50">
+                <div className="inline-block mb-3 px-4 py-1 bg-sgma-cta/20 backdrop-blur-sm rounded-full text-xs font-black uppercase tracking-widest text-sgma-cta border border-sgma-cta/50">
                   🎁 Exclusive Bundle Deal
                 </div>
 
                 {/* Heading */}
-                <h3 className="text-3xl md:text-4xl font-black mb-2 text-white uppercase tracking-tight">
+                <h3 className="text-3xl md:text-4xl font-black mb-2 text-sgma-charcoal uppercase tracking-tight">
                   Bundle All Three Courses
                 </h3>
 
                 {/* Subtext */}
-                <p className="text-sm text-slate-200 font-semibold mb-4 opacity-90">Limited time offer - Save 30% when you bundle all three courses</p>
+                <p className="text-sm text-sgma-charcoal/70 font-semibold mb-4 opacity-90">Limited time offer - Save 30% when you bundle all three courses</p>
 
                 {/* Benefits */}
-                <ul className="space-y-2 text-sm text-slate-200 mb-6">
+                <ul className="space-y-2 text-sm text-sgma-charcoal mb-6">
                   <li className="flex items-center gap-2 font-semibold">
-                    <span className="text-lg text-yellow-400">✓</span>
+                    <span className="text-lg text-sgma-cta">✓</span>
                     Extended 6-month mentorship
                   </li>
                   <li className="flex items-center gap-2 font-semibold">
-                    <span className="text-lg text-yellow-400">✓</span>
+                    <span className="text-lg text-sgma-cta">✓</span>
                     Premium materials kit included
                   </li>
                   <li className="flex items-center gap-2 font-semibold">
-                    <span className="text-lg text-yellow-400">✓</span>
+                    <span className="text-lg text-sgma-cta">✓</span>
                     Access to all 3 exclusive alumni communities
                   </li>
                 </ul>
@@ -235,31 +235,31 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
 
               {/* Right Section - Pricing & CTA */}
               <div className="flex-1 w-full md:w-auto">
-                <div className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-6 shadow-lg space-y-4 border border-yellow-400/30">
+                <div className="bg-white backdrop-blur-sm rounded-xl p-6 shadow-lg space-y-4 border border-sgma-cta/30">
                   {/* Pricing Grid */}
                   <div className="grid grid-cols-3 gap-3">
                     {/* Bundle Price */}
                     <div className="text-center">
-                      <p className="text-xs font-bold text-slate-300 uppercase tracking-widest mb-1">Bundle</p>
-                      <p className="text-3xl font-black text-yellow-300">₹38k</p>
+                      <p className="text-xs font-bold text-sgma-charcoal/70 uppercase tracking-widest mb-1">Bundle</p>
+                      <p className="text-3xl font-black text-sgma-cta">₹38k</p>
                     </div>
 
                     {/* Regular Price */}
                     <div className="text-center">
-                      <p className="text-xs font-bold text-slate-300 uppercase tracking-widest mb-1">Regular</p>
-                      <p className="text-2xl font-black text-slate-300 line-through">₹54k</p>
+                      <p className="text-xs font-bold text-sgma-charcoal/70 uppercase tracking-widest mb-1">Regular</p>
+                      <p className="text-2xl font-black text-sgma-charcoal/50 line-through">₹54k</p>
                     </div>
 
                     {/* Savings */}
                     <div className="text-center bg-red-500/20 rounded-lg p-3 border border-red-400/50">
-                      <p className="text-xs font-bold text-red-300 uppercase tracking-widest mb-1">Save</p>
-                      <p className="text-2xl font-black text-red-300">₹16k</p>
-                      <p className="text-xs text-red-300 font-bold mt-1">30%</p>
+                      <p className="text-xs font-bold text-red-600 uppercase tracking-widest mb-1">Save</p>
+                      <p className="text-2xl font-black text-red-600">₹16k</p>
+                      <p className="text-xs text-red-600 font-bold mt-1">30%</p>
                     </div>
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 px-6 py-3 rounded-lg font-black uppercase tracking-widest text-base hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 shadow-lg">
+                  <button className="w-full bg-sgma-cta text-white px-6 py-3 rounded-lg font-black uppercase tracking-widest text-base hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300 shadow-lg">
                     Enroll Bundle Now
                   </button>
                 </div>
@@ -274,60 +274,60 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
         {courses.map((c) => (
           <div key={c.title} id={c.title.toLowerCase().replace(/\s+/g, '-')} className="scroll-mt-20">
             {/* Course Details Card */}
-            <div className="bg-slate-800/60 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border-2 border-yellow-400/30 hover:border-yellow-300 transition-all duration-300">
+            <div className="bg-white backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border-2 border-sgma-cta/30 hover:border-sgma-cta/50 transition-all duration-300">
               {/* Header with Key Info */}
-              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 p-6 text-slate-900">
+              <div className="bg-sgma-navy p-6 text-white">
                 <h3 className="text-2xl md:text-3xl font-black mb-2 uppercase tracking-wide">{c.title}</h3>
-                <p className="text-sm md:text-base font-semibold mb-4 text-gray-900 leading-relaxed">
+                <p className="text-sm md:text-base font-semibold mb-4 text-white leading-relaxed">
                   {c.title === 'Flower of Life Mastery' && "Begin your sacred journey to master the ancient art of the Flower of Life - the blueprint of creation itself."}
                   {c.title === 'Sacred Torus Foundations' && "Learn the sacred geometry of flow that appears in everything from atoms to galaxies, and create stunning artistic expressions of this universal pattern."}
                   {c.title === '8 Mandala Journey' && "The journey through these 8 mandalas will awaken your creative consciousness and connect you to the sacred geometry patterns found throughout nature and consciousness."}
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-800 mb-1">Duration</p>
-                    <p className="text-lg font-black text-gray-900">{c.duration}</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-sgma-cream mb-1">Duration</p>
+                    <p className="text-lg font-black text-white">{c.duration}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-800 mb-1">Level</p>
-                    <p className="text-lg font-black text-gray-900">{c.level}</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-sgma-cream mb-1">Level</p>
+                    <p className="text-lg font-black text-white">{c.level}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-800 mb-1">Sessions</p>
-                    <p className="text-lg font-black text-gray-900">{c.sessions}</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-sgma-cream mb-1">Sessions</p>
+                    <p className="text-lg font-black text-white">{c.sessions}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-800 mb-1">Format</p>
-                    <p className="text-lg font-black text-gray-900">{c.format?.split(',')[0]}</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-sgma-cream mb-1">Format</p>
+                    <p className="text-lg font-black text-white">{c.format?.split(',')[0]}</p>
                   </div>
                 </div>
               </div>
 
               {/* Content Section */}
-              <div className="p-6 bg-gradient-to-b from-slate-800/40 to-slate-750/40">
+              <div className="p-6 bg-white">
                 {/* Pricing Section - Elevated for Visibility */}
-                <div className="mb-8 p-5 bg-gradient-to-br from-yellow-400/10 to-yellow-300/5 rounded-xl border-2 border-yellow-400/30">
+                <div className="mb-8 p-5 bg-gradient-to-br from-sgma-cta/10 to-sgma-cta/5 rounded-xl border-2 border-sgma-cta/30">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
                     {/* Pricing Info */}
-                    <div className="md:col-span-2 p-4 bg-gradient-to-br from-yellow-400/5 to-yellow-300/5 rounded-lg border-2 border-yellow-400/30 shadow-md">
+                    <div className="md:col-span-2 p-4 bg-gradient-to-br from-sgma-cta/5 to-sgma-cream/10 rounded-lg border-2 border-sgma-cta/30 shadow-md">
                       <div className="grid grid-cols-2 gap-4 mb-3">
                         <div>
-                          <p className="text-xs font-bold text-yellow-300 uppercase tracking-widest mb-2">Early Bird</p>
-                          <p className="text-3xl font-black text-yellow-300">₹{c.price_early.toLocaleString()}</p>
-                          <p className="text-xs text-slate-300 font-semibold mt-1">Limited Time</p>
+                          <p className="text-xs font-bold text-sgma-cta uppercase tracking-widest mb-2">Early Bird</p>
+                          <p className="text-3xl font-black text-sgma-cta">₹{c.price_early.toLocaleString()}</p>
+                          <p className="text-xs text-sgma-charcoal/70 font-semibold mt-1">Limited Time</p>
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-slate-300 uppercase tracking-widest mb-2">Regular</p>
-                          <p className="text-3xl font-black text-slate-200">₹{c.price_regular.toLocaleString()}</p>
-                          <p className="text-xs text-slate-400 font-semibold mt-1">Standard Rate</p>
+                          <p className="text-xs font-bold text-sgma-charcoal/70 uppercase tracking-widest mb-2">Regular</p>
+                          <p className="text-3xl font-black text-sgma-charcoal">₹{c.price_regular.toLocaleString()}</p>
+                          <p className="text-xs text-sgma-charcoal/60 font-semibold mt-1">Standard Rate</p>
                         </div>
                       </div>
-                      <p className="text-xs text-yellow-300 font-bold uppercase tracking-widest text-center">Save ₹{(c.price_regular - c.price_early).toLocaleString()}</p>
+                      <p className="text-xs text-sgma-cta font-bold uppercase tracking-widest text-center">Save ₹{(c.price_regular - c.price_early).toLocaleString()}</p>
                     </div>
 
                     {/* CTA Button */}
                     <div className="flex items-center justify-center">
-                      <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 px-6 py-4 rounded-lg font-bold uppercase tracking-widest hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 h-full">
+                      <button className="w-full bg-sgma-cta text-white px-6 py-4 rounded-lg font-bold uppercase tracking-widest hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300 h-full">
                         Enroll<br />Now
                       </button>
                     </div>
@@ -338,70 +338,70 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   {/* What you'll get */}
                   <div>
-                    <h4 className="text-lg font-black mb-4 text-yellow-300 uppercase tracking-wide">What You'll Get</h4>
+                    <h4 className="text-lg font-black mb-4 text-sgma-cta uppercase tracking-wide">What You'll Get</h4>
                     {c.title === 'Flower of Life Mastery' && (
-                      <ul className="space-y-3 text-sm text-white">
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                      <ul className="space-y-3 text-sm text-sgma-charcoal">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">📚</span>
                           <span><strong>16 guided sessions</strong> (2×/week, 2.5 hrs each)</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🎁</span>
                           <span><strong>Materials kit option</strong> and certificate on completion</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🤝</span>
                           <span><strong>3-month mentorship access</strong> and lifetime alumni community</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🏆</span>
                           <span><strong>Portfolio review</strong> and exhibition opportunity</span>
                         </li>
                       </ul>
                     )}
                     {c.title === 'Sacred Torus Foundations' && (
-                      <ul className="space-y-3 text-sm text-white">
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                      <ul className="space-y-3 text-sm text-sgma-charcoal">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">📚</span>
                           <span><strong>12 guided sessions</strong> (2×/week, 2.5 hrs each)</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">📋</span>
                           <span><strong>100+ torus drawing templates</strong> (digital and printable)</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🎨</span>
                           <span><strong>Comprehensive 3D visualization workbook</strong></span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🤝</span>
                           <span><strong>3-month mentorship access</strong> and lifetime alumni community</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🏆</span>
                           <span><strong>Certificate</strong> and portfolio exhibition opportunity</span>
                         </li>
                       </ul>
                     )}
                     {c.title === '8 Mandala Journey' && (
-                      <ul className="space-y-3 text-sm text-white">
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                      <ul className="space-y-3 text-sm text-sgma-charcoal">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">⚡</span>
                           <span><strong>12 intensive daily sessions</strong> (3 hrs each)</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🎨</span>
                           <span><strong>Complete mandala creation toolkit</strong> and sacred geometry guides</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">✨</span>
                           <span><strong>8 finished mandalas</strong> for your portfolio</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">📖</span>
                           <span><strong>Guided journaling practice</strong> integrated throughout</span>
                         </li>
-                        <li className="flex items-start gap-3 p-2 rounded hover:bg-yellow-400/10 transition-colors">
+                        <li className="flex items-start gap-3 p-2 rounded hover:bg-sgma-cta/10 transition-colors">
                           <span className="text-xl flex-shrink-0">🤝</span>
                           <span><strong>2-month mentorship</strong> and lifetime alumni community</span>
                         </li>
@@ -411,9 +411,9 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
 
                   {/* Syllabus */}
                   <div>
-                    <h4 className="text-lg font-black mb-4 text-yellow-300 uppercase tracking-wide">Learning Syllabus</h4>
+                    <h4 className="text-lg font-black mb-4 text-sgma-cta uppercase tracking-wide">Learning Syllabus</h4>
                     {c.title === 'Flower of Life Mastery' && (
-                      <ol className="space-y-2 text-sm text-white list-none">
+                      <ol className="space-y-2 text-sm text-sgma-charcoal list-none">
                         {[
                           { icon: '🌀', text: 'Introduction to Vedic geometry & the Flower of Life' },
                           { icon: '📐', text: 'Basic compass & proportion exercises' },
@@ -432,7 +432,7 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
                       </ol>
                     )}
                     {c.title === 'Sacred Torus Foundations' && (
-                      <ol className="space-y-2 text-sm text-white list-none">
+                      <ol className="space-y-2 text-sm text-sgma-charcoal list-none">
                         {[
                           { icon: '∞', text: 'Introduction to torus geometry and historical significance' },
                           { icon: '📐', text: 'Mathematical principles, proportions, and construction methods' },
@@ -451,7 +451,7 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
                       </ol>
                     )}
                     {c.title === '8 Mandala Journey' && (
-                      <ol className="space-y-2 text-sm text-white list-none">
+                      <ol className="space-y-2 text-sm text-sgma-charcoal list-none">
                         {[
                           { icon: '💡', text: 'Rapid ideation & conceptual frameworks for mandala design' },
                           { icon: '⭐', text: 'Mandala structure: center, layers, symmetry, and balance principles' },
@@ -474,11 +474,11 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
 
                 {/* Course Format & Instructor Info */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-yellow-400/5 p-3 rounded-lg border border-yellow-400/30">
-                    <p className="text-xs text-slate-300"><strong className="text-yellow-300">Format:</strong> {c.format}</p>
+                  <div className="bg-sgma-cta/5 p-3 rounded-lg border border-sgma-cta/30">
+                    <p className="text-xs text-sgma-charcoal"><strong className="text-sgma-cta">Format:</strong> {c.format}</p>
                   </div>
-                  <div className="bg-yellow-400/5 p-3 rounded-lg border border-yellow-400/30">
-                    <p className="text-xs text-slate-300"><strong className="text-yellow-300">Instructor:</strong> Varalakshmi B</p>
+                  <div className="bg-sgma-cta/5 p-3 rounded-lg border border-sgma-cta/30">
+                    <p className="text-xs text-sgma-charcoal"><strong className="text-sgma-cta">Instructor:</strong> Varalakshmi B</p>
                   </div>
                 </div>
               </div>
@@ -489,15 +489,15 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
 
       {/* Premium Add-On Section - Displayed Once */}
       <div className="mb-16">
-        <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-300/5 border-2 border-yellow-400/30 rounded-xl p-6">
-          <h3 className="text-2xl md:text-3xl font-black mb-6 text-yellow-300 uppercase tracking-wide text-center">Premium Add-On Available for All Courses</h3>
+        <div className="bg-gradient-to-r from-sgma-cta/10 to-sgma-cta/5 border-2 border-sgma-cta/30 rounded-xl p-6">
+          <h3 className="text-2xl md:text-3xl font-black mb-6 text-sgma-cta uppercase tracking-wide text-center">Premium Add-On Available for All Courses</h3>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="flex-1">
-              <p className="text-sm font-bold text-white mb-2">🎨 Premium Art Kit Add-on</p>
-              <p className="text-sm text-slate-300 mb-4">Professional-grade supplies & tools including premium brushes, quality papers, and specialty inks. Perfect complement to any course for enhanced artistic expression.</p>
+              <p className="text-sm font-bold text-sgma-charcoal mb-2">🎨 Premium Art Kit Add-on</p>
+              <p className="text-sm text-sgma-charcoal/70 mb-4">Professional-grade supplies & tools including premium brushes, quality papers, and specialty inks. Perfect complement to any course for enhanced artistic expression.</p>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-black text-yellow-300">₹3,000</span>
-                <span className="text-sm text-slate-400 font-semibold">One-time fee</span>
+                <span className="text-4xl font-black text-sgma-cta">₹3,000</span>
+                <span className="text-sm text-sgma-charcoal/60 font-semibold">One-time fee</span>
               </div>
             </div>
           </div>
@@ -508,7 +508,7 @@ export default function CoursesClient({ courses, coursesContent }: CoursesClient
       {showGoToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed right-6 bottom-8 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 p-4 rounded-full shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 z-50 flex items-center justify-center"
+          className="fixed right-6 bottom-8 bg-sgma-cta text-white p-4 rounded-full shadow-lg hover:shadow-2xl hover:shadow-sgma-cta/50 transition-all duration-300 z-50 flex items-center justify-center"
           aria-label="Go to top"
         >
           <svg
