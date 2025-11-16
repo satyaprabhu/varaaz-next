@@ -145,12 +145,17 @@ export default async function Home() {
 
           {/* Main Hero Title - Balanced Size */}
           <h1 className="text-4xl md:text-5xl font-black mb-3 leading-tight uppercase tracking-tight text-sgma-charcoal mt-4">
-            {pageData.title}
+            Find Your Calm Through Sacred Geometry
           </h1>
 
           {/* Hero Subtitle - Balanced Size */}
-          <p className="text-base md:text-lg text-sgma-charcoal mb-6 max-w-3xl mx-auto leading-relaxed font-light">
-            {pageData.subtitle}
+          <p className="text-2xl md:text-3xl font-bold text-sgma-charcoal mb-6 max-w-3xl mx-auto leading-relaxed">
+            Transform overwhelm into peace, one mandala at a time
+          </p>
+
+          {/* Hero Paragraph */}
+          <p className="text-base md:text-lg text-sgma-charcoal mb-8 max-w-3xl mx-auto leading-relaxed font-light">
+            Master the ancient art of mandalas through experiential courses that blend Vedic wisdom with hands-on creativity. No complicated formulas—just guided exploration that brings calm, clarity, and connection.
           </p>
 
           {/* Course Section - Single Layout with CTA */}
