@@ -4,37 +4,53 @@ interface Testimonial {
   id: string
   quote: string
   author: string
+  initials: string
   title: string
+  location: string
+  course: string
   rating: number
+  bgColor: string
 }
 
 const testimonials: Testimonial[] = [
   {
     id: '1',
-    quote: 'The Flower of Life course transformed my understanding of sacred geometry. I now see the universe in a completely different way. Truly life-changing!',
+    quote: 'I went from staring at blank pages with anxiety to completing my first Flower of Life mandala in just 3 weeks. The step-by-step guidance gave me confidence I didn\'t know I had. Now I use mandala art daily as my meditation practice.',
     author: 'Priya Sharma',
-    title: 'Art Therapist & Student',
-    rating: 5
+    initials: 'PS',
+    title: 'Art Therapist',
+    location: 'Chennai',
+    course: 'Flower of Life Mastery Graduate',
+    rating: 5,
+    bgColor: 'bg-gradient-to-br from-pink-400 to-rose-500'
   },
   {
     id: '2',
-    quote: 'Varalakshmi\'s teaching methodology is unparalleled. Her blend of Vedic science with practical mandala creation is the most comprehensive approach I\'ve encountered.',
+    quote: 'After 15 years of mindfulness practice, I finally found a method that combines meditation with creative expression. Varalakshmi\'s teaching connects Vedic principles to every compass stroke—nothing is arbitrary. I\'ve created 12 mandalas in 2 months and my clients notice the difference in my presence.',
     author: 'Rajesh Kumar',
-    title: 'Mindfulness Practitioner',
-    rating: 5
+    initials: 'RK',
+    title: 'Mindfulness Coach',
+    location: 'Bangalore',
+    course: '8 Mandala Journey Graduate',
+    rating: 5,
+    bgColor: 'bg-gradient-to-br from-blue-400 to-indigo-500'
   },
   {
     id: '3',
-    quote: 'The 8 Mandala Journey was intense, rewarding, and deeply transformative. I\'ve gained not just artistic skills but spiritual insight. Highly recommended!',
+    quote: 'As a graphic designer, I thought I knew geometry. I was wrong. This course taught me the sacred why behind the patterns. I\'ve incorporated these principles into my client work, and one design won a regional award. Beyond skills, I gained a daily practice that centers me.',
     author: 'Ananya Patel',
-    title: 'Graphic Designer & Seeker',
-    rating: 5
+    initials: 'AP',
+    title: 'Graphic Designer',
+    location: 'Mumbai',
+    course: 'Sacred Torus Foundations + 8 Mandala Journey',
+    rating: 5,
+    bgColor: 'bg-gradient-to-br from-purple-400 to-violet-500'
   }
 ]
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-4 px-4 bg-sgma-beige relative z-10">
+    <section className="py-4 px-4 bg-white relative z-10">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -42,10 +58,10 @@ export default function TestimonialsSection() {
             Student Stories
           </div>
           <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight text-sgma-charcoal">
-            Transform Your<span className="text-sgma-navy"> Consciousness</span>
+            From Blank Pages to<span className="text-sgma-navy"> Beautiful Mandalas</span>
           </h2>
           <p className="text-lg text-sgma-charcoal/70 max-w-2xl mx-auto">
-            Hear from students and seekers who have embarked on their transformative journey with SGMA.
+            Hear from students who discovered calm, creativity, and confidence through sacred geometry.
           </p>
         </div>
 
@@ -73,11 +89,19 @@ export default function TestimonialsSection() {
                 </p>
 
                 {/* Author Info */}
-                <div className="pt-4 border-t border-sgma-navy/20">
-                  <p className="font-bold text-sgma-charcoal text-sm">{testimonial.author}</p>
-                  <p className="text-xs text-sgma-charcoal/60 uppercase tracking-widest font-semibold">
-                    {testimonial.title}
-                  </p>
+                <div className="pt-4 border-t border-sgma-navy/20 flex items-center gap-3">
+                  <div className={`w-12 h-12 ${testimonial.bgColor} rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                    {testimonial.initials}
+                  </div>
+                  <div>
+                    <p className="font-bold text-sgma-charcoal text-sm">{testimonial.author}</p>
+                    <p className="text-xs text-sgma-charcoal/60 uppercase tracking-widest font-semibold">
+                      {testimonial.title}, {testimonial.location}
+                    </p>
+                    <p className="text-xs text-sgma-cta uppercase tracking-widest font-semibold mt-1">
+                      {testimonial.course}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

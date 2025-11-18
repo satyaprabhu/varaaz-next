@@ -144,7 +144,7 @@ export default async function Home() {
           <ImageCarousel />
 
           {/* Main Hero Title - Balanced Size */}
-          <h1 className="text-4xl md:text-5xl font-black mb-3 leading-tight uppercase tracking-tight text-sgma-charcoal mt-4">
+          <h1 className="text-3xl md:text-4xl font-black mb-3 leading-tight uppercase tracking-tight text-sgma-charcoal mt-4">
             Find Your Calm Through Sacred Geometry
           </h1>
 
@@ -154,35 +154,22 @@ export default async function Home() {
           </p>
 
           {/* Hero Paragraph */}
-          <p className="text-base md:text-lg text-sgma-charcoal mb-8 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-base md:text-lg text-sgma-charcoal mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             Master the ancient art of mandalas through experiential courses that blend Vedic wisdom with hands-on creativity. No complicated formulas—just guided exploration that brings calm, clarity, and connection.
           </p>
 
-          {/* Course Section - Single Layout with CTA */}
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4 text-sgma-charcoal">
-              Mandala Art Designs
-            </h2>
-            <div className="flex flex-col md:flex-row gap-6 items-start justify-between">
-              {/* Text Content */}
-              <p className="text-base md:text-lg text-sgma-charcoal leading-relaxed font-light flex-1">
-                <span className="font-semibold">Courses & Offerings:</span> Experiential, Experimental, Creative, Ancient Wisdom. SGMA helps you explore the deeper beauty of mandalas and sacred geometry. Here, geometry becomes a path of creativity, calm, and connection—not complicated formulas or school-style lessons. It's a space where artistic flow meets mindful exploration. If you're drawn to discover the joy and balance that sacred geometry brings, you'll feel right at home.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col gap-3 flex-shrink-0">
-                <Link href="/courses" className="inline-block">
-                  <div className="bg-sgma-cta text-white px-7 py-3 rounded-lg font-bold uppercase tracking-widest text-base hover:shadow-lg hover:shadow-sgma-cta/30 transition-all duration-300 whitespace-nowrap">
-                    Explore Courses
-                  </div>
-                </Link>
-                <Link href="/bookings" className="inline-block">
-                  <div className="bg-transparent border-2 border-sgma-cta text-sgma-cta px-7 py-3 rounded-lg font-bold uppercase tracking-widest text-base hover:bg-sgma-cta/10 transition-all duration-300 whitespace-nowrap">
-                    Book Session
-                  </div>
-                </Link>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link href="/courses" className="inline-block">
+              <div className="bg-sgma-cta text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-base hover:shadow-lg hover:shadow-sgma-cta/30 transition-all duration-300">
+                Explore Courses
               </div>
-            </div>
+            </Link>
+            <Link href="/bookings" className="inline-block">
+              <div className="bg-transparent border-2 border-sgma-cta text-sgma-cta px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-base hover:bg-sgma-cta/10 transition-all duration-300">
+                Book Session
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -301,107 +288,130 @@ export default async function Home() {
       </section>
 
       {/* Does This Sound Like You Section */}
-      <section className="py-4 px-4 bg-sgma-beige relative z-10">
+      <section className="py-4 px-4 bg-white relative z-10">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black text-center mb-16 uppercase tracking-tight text-sgma-charcoal">
             Does This Sound Like<span className="text-sgma-navy"> You?</span>
           </h2>
 
-          <ul className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Point 1 */}
-            <li className="flex items-start gap-4">
-              <span className="text-sgma-cta text-2xl flex-shrink-0 mt-1">•</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Pain Point 1 */}
+            <div className="flex flex-col gap-3 pl-4 border-l-4 border-sgma-cta">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl flex-shrink-0">🤔</span>
+                <h3 className="text-lg font-bold text-sgma-navy uppercase tracking-wide">
+                  Fascination Without Direction
+                </h3>
+              </div>
               <p className="text-base md:text-lg text-sgma-charcoal leading-relaxed">
-                You're fascinated by mandalas and sacred patterns, but not sure how to begin.
+                You're captivated by sacred geometry and mandalas, but have no idea where to begin—or if you even have the skills to create them.
               </p>
-            </li>
+            </div>
 
-            {/* Point 2 */}
-            <li className="flex items-start gap-4">
-              <span className="text-sgma-cta text-2xl flex-shrink-0 mt-1">•</span>
+            {/* Pain Point 2 */}
+            <div className="flex flex-col gap-3 pl-4 border-l-4 border-sgma-navy">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl flex-shrink-0">😰</span>
+                <h3 className="text-lg font-bold text-sgma-navy uppercase tracking-wide">
+                  Blank Page Paralysis
+                </h3>
+              </div>
               <p className="text-base md:text-lg text-sgma-charcoal leading-relaxed">
-                You want to draw for peace and focus, but end up staring at a blank page.
+                You crave the calm that comes from creative practice, but you stare at a blank page feeling stuck, overwhelmed, and unsure of the first step.
               </p>
-            </li>
+            </div>
 
-            {/* Point 3 */}
-            <li className="flex items-start gap-4">
-              <span className="text-sgma-cta text-2xl flex-shrink-0 mt-1">•</span>
+            {/* Pain Point 3 */}
+            <div className="flex flex-col gap-3 pl-4 border-l-4 border-sgma-cta">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl flex-shrink-0">🔀</span>
+                <h3 className="text-lg font-bold text-sgma-navy uppercase tracking-wide">
+                  Lost Mid-Creation
+                </h3>
+              </div>
               <p className="text-base md:text-lg text-sgma-charcoal leading-relaxed">
-                You start a geometry, but lose your way before it comes together.
+                You start a mandala or geometric pattern with excitement, but halfway through you lose your way, and it falls apart before your eyes.
               </p>
-            </li>
+            </div>
 
-            {/* Point 4 */}
-            <li className="flex items-start gap-4">
-              <span className="text-sgma-cta text-2xl flex-shrink-0 mt-1">•</span>
+            {/* Pain Point 4 */}
+            <div className="flex flex-col gap-3 pl-4 border-l-4 border-sgma-navy">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl flex-shrink-0">🎯</span>
+                <h3 className="text-lg font-bold text-sgma-navy uppercase tracking-wide">
+                  Missing the Foundation
+                </h3>
+              </div>
               <p className="text-base md:text-lg text-sgma-charcoal leading-relaxed">
-                You dream of creating your own balanced, graceful designs, yet don't know the steps.
+                You dream of creating balanced, intricate designs that reflect your inner vision, but you lack the fundamental knowledge to bring them to life.
               </p>
-            </li>
+            </div>
 
-            {/* Point 5 */}
-            <li className="flex items-start gap-4">
-              <span className="text-sgma-cta text-2xl flex-shrink-0 mt-1">•</span>
+            {/* Pain Point 5 */}
+            <div className="flex flex-col gap-3 pl-4 border-l-4 border-sgma-cta">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl flex-shrink-0">📺</span>
+                <h3 className="text-lg font-bold text-sgma-navy uppercase tracking-wide">
+                  Surface-Level Learning
+                </h3>
+              </div>
               <p className="text-base md:text-lg text-sgma-charcoal leading-relaxed">
-                You've followed online videos, but they move too fast or miss the essence of the art.
+                You've tried YouTube tutorials and online classes, but they rush through steps, skip the meaning behind the patterns, and leave you feeling empty.
               </p>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* How The Sacred Geometry Circle Helps Section */}
-      <section className="py-4 px-4 bg-sgma-beige relative z-10">
+      {/* How SGMA Transforms Your Practice Section */}
+      <section className="py-4 px-4 bg-white relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center mb-16 uppercase tracking-tight text-sgma-charcoal">
-            Here's How The Sacred<span className="text-sgma-navy"> Geometry Circle</span> Helps
+          <h2 className="text-3xl md:text-4xl font-black text-center mb-3 uppercase tracking-tight text-sgma-charcoal">
+            Here's How SGMA<span className="text-sgma-navy"> Transforms</span> Your Practice
           </h2>
+          <p className="text-center text-sgma-charcoal/70 text-lg mb-16 max-w-3xl mx-auto">
+            A proven 3-step method that takes you from blank page to finished mandala
+          </p>
 
           <div className="space-y-8">
             {/* Step 1: Understand */}
             <div className="flex gap-6 items-start">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-sgma-navy text-white">
-                  <span className="text-2xl font-black">1</span>
-                </div>
-              </div>
+              <div className="flex-shrink-0 text-5xl">💡</div>
               <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-sgma-charcoal mb-3 uppercase tracking-wide">Understand</h3>
+                <h3 className="text-2xl font-bold text-sgma-charcoal mb-3 uppercase tracking-wide">Understand the Sacred Foundations</h3>
                 <p className="text-sgma-charcoal text-base leading-relaxed">
-                  Learn the foundations of each pattern through simple, visual explanations. Discover the meaning, rhythm, and balance behind the geometry.
+                  Learn the meaning, proportions, and cosmic principles behind each pattern through clear visual explanations—no math degree required.
                 </p>
               </div>
             </div>
 
             {/* Step 2: Construct */}
             <div className="flex gap-6 items-start">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-sgma-navy text-white">
-                  <span className="text-2xl font-black">2</span>
-                </div>
-              </div>
+              <div className="flex-shrink-0 text-5xl">✏️</div>
               <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-sgma-charcoal mb-3 uppercase tracking-wide">Construct</h3>
+                <h3 className="text-2xl font-bold text-sgma-charcoal mb-3 uppercase tracking-wide">Construct with Confidence</h3>
                 <p className="text-sgma-charcoal text-base leading-relaxed">
-                  Draw along with guided, step-by-step compass and scale methods from your first circle to a complete geometric grid.
+                  Follow guided, step-by-step methods using compass and scale. Each line has purpose, each angle carries intention—you'll never feel lost.
                 </p>
               </div>
             </div>
 
             {/* Step 3: Create */}
             <div className="flex gap-6 items-start">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-sgma-navy text-white">
-                  <span className="text-2xl font-black">3</span>
-                </div>
-              </div>
+              <div className="flex-shrink-0 text-5xl">🎨</div>
               <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-sgma-charcoal mb-3 uppercase tracking-wide">Create</h3>
+                <h3 className="text-2xl font-bold text-sgma-charcoal mb-3 uppercase tracking-wide">Create Your Unique Expression</h3>
                 <p className="text-sgma-charcoal text-base leading-relaxed">
-                  Transform your grid into a unique artwork. Add your touch through linework, shading, or colours using pencils, watercolours, or any medium you love.
+                  Transform your geometric foundation into a finished artwork that reflects your inner vision. Use any medium you love—pencils, watercolours, markers, or digital tools.
                 </p>
               </div>
+            </div>
+
+            {/* Outcome Statement */}
+            <div className="mt-12 pt-8 border-t border-sgma-navy/20">
+              <p className="text-center text-sgma-charcoal text-lg font-light leading-relaxed max-w-3xl mx-auto">
+                <span className="font-bold">The result?</span> Sacred geometry artwork you're proud to share, and a creative practice that brings lasting calm.
+              </p>
             </div>
           </div>
         </div>
@@ -410,101 +420,105 @@ export default async function Home() {
       {/* Testimonials Section */}
       <TestimonialsSection />
 
-      {/* What We Offer - Card Grid */}
-      <section className="py-4 px-4 bg-sgma-beige relative z-10">
+      {/* Why SGMA Is Different Section */}
+      <section className="py-4 px-4 bg-white relative z-10">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black text-center mb-16 uppercase tracking-tight text-sgma-charcoal">
-            Why<span className="text-sgma-navy"> Choose</span> SGMA
+            Why SGMA Is<span className="text-sgma-navy"> Different</span>
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Card 1 - Vedic Science */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {/* Pillar 1 - Ancient Wisdom */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl blur-xl"></div>
-              <div className="relative bg-white backdrop-blur-sm border-2 border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-xl p-8 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-white backdrop-blur-sm border-2 border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-xl p-8 transition-all duration-300 h-full flex flex-col border-l-4 border-l-sgma-cta">
                 <div className="text-5xl mb-6">📿</div>
-                <h3 className="text-2xl font-black uppercase tracking-wide mb-4 text-sgma-cta">Vedic Science</h3>
+                <h3 className="text-2xl font-black uppercase tracking-wide mb-4 text-sgma-charcoal">Ancient Wisdom, Modern Clarity</h3>
                 <p className="text-sgma-charcoal leading-relaxed text-sm flex-grow">
-                  Master ancient Vedic principles, cosmic ratios, and universal laws that reshape your consciousness through science-backed methodology.
+                  Learn the Vedic principles and sacred proportions behind each mandala through clear, visual explanations—no Sanskrit expertise or math background required. Understand why each pattern matters, not just how to draw it.
                 </p>
               </div>
             </div>
 
-            {/* Card 2 - Hands-On Creation */}
+            {/* Pillar 2 - Complete Mastery */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl blur-xl"></div>
-              <div className="relative bg-white backdrop-blur-sm border-2 border-sgma-navy/20 group-hover:border-sgma-cta/60 rounded-xl p-8 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-white backdrop-blur-sm border-2 border-sgma-navy/20 group-hover:border-sgma-cta/60 rounded-xl p-8 transition-all duration-300 h-full flex flex-col border-l-4 border-l-sgma-navy">
                 <div className="text-5xl mb-6">🎨</div>
-                <h3 className="text-2xl font-black uppercase tracking-wide mb-4 text-sgma-cta">Hands-On Art</h3>
+                <h3 className="text-2xl font-black uppercase tracking-wide mb-4 text-sgma-charcoal">From First Circle to Finished Art</h3>
                 <p className="text-sgma-charcoal leading-relaxed text-sm flex-grow">
-                  Work with multiple media to develop your unique artistic voice and create exhibition-ready work.
+                  Master multiple techniques using compass, ruler, pencils, watercolors, and markers. Create 8+ complete mandalas you'll be proud to display, gift, or sell. Many graduates frame their work or start side practices.
                 </p>
               </div>
             </div>
 
-            {/* Card 3 - Community & Mentorship */}
+            {/* Pillar 3 - Community & Mentorship */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl blur-xl"></div>
-              <div className="relative bg-white backdrop-blur-sm border-2 border-sgma-navy/20 group-hover:border-sgma-cta/60 rounded-xl p-8 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-white backdrop-blur-sm border-2 border-sgma-navy/20 group-hover:border-sgma-cta/60 rounded-xl p-8 transition-all duration-300 h-full flex flex-col border-l-4 border-l-sgma-cta">
                 <div className="text-5xl mb-6">🤝</div>
-                <h3 className="text-2xl font-black uppercase tracking-wide mb-4 text-sgma-cta">Mentorship</h3>
+                <h3 className="text-2xl font-black uppercase tracking-wide mb-4 text-sgma-charcoal">Personal Mentorship + Lifetime Community</h3>
                 <p className="text-sgma-charcoal leading-relaxed text-sm flex-grow">
-                  Access to 3-month mentorship and lifetime alumni community with direct guidance from SGMA.
+                  Get 3 months of direct feedback on your work, weekly Q&A sessions, and access to our alumni community where graduates share techniques, host virtual workshops, and support each other's creative journeys.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-4 px-4 bg-sgma-beige relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
-            Ready to<span className="text-sgma-navy"> Transform</span>?
-          </h2>
-          <p className="text-sgma-charcoal/70 text-xl mb-16 max-w-2xl mx-auto">
-            Join hundreds of seekers mastering Vedic science and ancient wisdom through mandala creation and conscious practice.
-          </p>
+          {/* Secondary CTA Section */}
+          <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-black mb-3 uppercase tracking-tight text-sgma-charcoal">
+              Create Your First Mandala in<span className="text-sgma-navy"> 3 Weeks</span>
+            </h3>
+            <p className="text-lg text-sgma-charcoal/70 mb-12 max-w-2xl mx-auto">
+              Join 1,200+ students who've transformed blank pages into sacred geometry art—and discovered a creative practice that brings lasting calm.
+            </p>
 
-          {/* Stats Section */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {/* Stat 1 */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg blur-xl"></div>
-              <div className="relative bg-white backdrop-blur-sm border border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-lg p-8 transition-all duration-300">
-                <div className="text-5xl font-black text-sgma-cta mb-2">1200+</div>
-                <p className="text-sgma-charcoal/70 text-sm">People Discovered Their Purpose</p>
+            {/* Stats Section */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg blur-xl"></div>
+                <div className="relative bg-white backdrop-blur-sm border border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-lg p-6 transition-all duration-300">
+                  <div className="text-4xl font-black text-sgma-cta mb-2">1,200+</div>
+                  <p className="text-sgma-charcoal/70 text-sm">Students Completed Courses</p>
+                </div>
+              </div>
+
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg blur-xl"></div>
+                <div className="relative bg-white backdrop-blur-sm border border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-lg p-6 transition-all duration-300">
+                  <div className="text-4xl font-black text-sgma-cta mb-2">4,500+</div>
+                  <p className="text-sgma-charcoal/70 text-sm">Mandalas Created & Shared</p>
+                </div>
+              </div>
+
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg blur-xl"></div>
+                <div className="relative bg-white backdrop-blur-sm border border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-lg p-6 transition-all duration-300">
+                  <div className="text-4xl font-black text-sgma-cta mb-2">2.1M</div>
+                  <p className="text-sgma-charcoal/70 text-sm">Minutes of Mindful Creation</p>
+                </div>
               </div>
             </div>
 
-            {/* Stat 2 */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg blur-xl"></div>
-              <div className="relative bg-white backdrop-blur-sm border border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-lg p-8 transition-all duration-300">
-                <div className="text-5xl font-black text-sgma-cta mb-2">4500+</div>
-                <p className="text-sgma-charcoal/70 text-sm">Patterns Found & Explored</p>
-              </div>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg blur-xl"></div>
-              <div className="relative bg-white backdrop-blur-sm border border-sgma-cta/30 group-hover:border-sgma-cta/60 rounded-lg p-8 transition-all duration-300">
-                <div className="text-5xl font-black text-sgma-cta mb-2">2.1M</div>
-                <p className="text-sgma-charcoal/70 text-sm">Insights Captured</p>
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/courses" className="group relative inline-block">
+                <div className="absolute inset-0 bg-sgma-cta opacity-75 group-hover:opacity-100 rounded-lg blur-lg transition-all duration-300 -z-10"></div>
+                <div className="bg-sgma-cta text-white px-8 py-4 rounded-lg font-black uppercase tracking-widest text-base hover:shadow-2xl hover:shadow-sgma-cta/50 transition-all duration-300">
+                  Explore Courses & Pricing
+                </div>
+              </Link>
+              <Link href="/bookings" className="inline-block">
+                <div className="bg-transparent border-2 border-sgma-cta text-sgma-cta px-8 py-4 rounded-lg font-bold uppercase tracking-widest text-base hover:bg-sgma-cta/10 transition-all duration-300">
+                  Book Free Discovery Call
+                </div>
+              </Link>
             </div>
           </div>
-
-          <Link href="/courses" className="group relative inline-block">
-            <div className="absolute inset-0 bg-sgma-cta opacity-75 group-hover:opacity-100 rounded-lg blur-lg transition-all duration-300 -z-10"></div>
-            <div className="bg-sgma-cta text-white px-10 py-5 rounded-lg font-black uppercase tracking-widest text-lg hover:shadow-2xl hover:shadow-sgma-cta/50 transition-all duration-300">
-              Start Your Journey
-            </div>
-          </Link>
         </div>
       </section>
+
     </div>
   )
 }
