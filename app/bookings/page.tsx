@@ -66,131 +66,130 @@ export default function BookingsPage() {
 
       <div className="py-8 px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Left Column - Book a Session */}
-            <div>
+          {/* Book a Session - Centered */}
+          <div className="max-w-2xl mx-auto mb-16">
+            <div className="text-center mb-8">
               <h1 className="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight text-sgma-charcoal">
                 Book a Session
               </h1>
-              <p className="text-sgma-charcoal mb-4 text-sm font-light">
+              <p className="text-sgma-charcoal text-sm font-light">
                 Schedule a personalized 1-on-1 guidance session with our instructors.
               </p>
+            </div>
 
-              <div className="bg-sgma-charcoal/10 backdrop-blur-sm border border-sgma-navy/20 rounded-lg p-4">
-            {!showFallback ? (
-              <div>
-                <BookingWidget />
-                <div className="text-center mt-4 pt-4 border-t border-sgma-navy/20">
-                  <p className="text-xs text-sgma-charcoal mb-2">Having trouble with the calendar?</p>
-                  <button
-                    onClick={() => setShowFallback(true)}
-                    className="text-sgma-cta hover:text-sgma-navy underline text-xs font-semibold transition-colors"
-                  >
-                    Use booking form instead
-                  </button>
+            <div className="bg-sgma-charcoal/10 backdrop-blur-sm border border-sgma-navy/20 rounded-lg p-4">
+              {!showFallback ? (
+                <div>
+                  <BookingWidget />
+                  <div className="text-center mt-4 pt-4 border-t border-sgma-navy/20">
+                    <p className="text-xs text-sgma-charcoal mb-2">Having trouble with the calendar?</p>
+                    <button
+                      onClick={() => setShowFallback(true)}
+                      className="text-sgma-cta hover:text-sgma-navy underline text-xs font-semibold transition-colors"
+                    >
+                      Use booking form instead
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <div>
-                <BookingWidget fallback={true} />
-                <div className="text-center mt-4 pt-4 border-t border-sgma-navy/20">
-                  <button
-                    onClick={() => setShowFallback(false)}
-                    className="text-sgma-cta hover:text-sgma-navy underline text-xs font-semibold transition-colors"
-                  >
-                    Use Calendar instead
-                  </button>
+              ) : (
+                <div>
+                  <BookingWidget fallback={true} />
+                  <div className="text-center mt-4 pt-4 border-t border-sgma-navy/20">
+                    <button
+                      onClick={() => setShowFallback(false)}
+                      className="text-sgma-cta hover:text-sgma-navy underline text-xs font-semibold transition-colors"
+                    >
+                      Use Calendar instead
+                    </button>
+                  </div>
                 </div>
-              </div>
               )}
-              </div>
             </div>
 
-            {/* Right Column - Upcoming Workshops & Bookings */}
-            <div>
-              {/* Upcoming Workshops */}
-              <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight text-sgma-charcoal">
-                  Upcoming Workshops
-                </h2>
-
-                {/* Workshop Table */}
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b-2 border-sgma-navy/30">
-                        <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Workshop</th>
-                        <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Date</th>
-                        <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
-                        <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
-                          📐 Sacred Geometry
-                        </td>
-                        <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">17–18 Jan</td>
-                        <td className="py-4 px-6">
-                          <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
-                            Book →
-                          </a>
-                        </td>
-                      </tr>
-                      <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
-                        <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
-                          🌸 Flower of Life
-                        </td>
-                        <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">12 Jan</td>
-                        <td className="py-4 px-6">
-                          <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
-                            Book →
-                          </a>
-                        </td>
-                      </tr>
-                      <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
-                        <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
-                          🔄 Torus Foundations
-                        </td>
-                        <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">1 Feb</td>
-                        <td className="py-4 px-6">
-                          <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
-                            Book →
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              {/* Bookings & Sessions Info */}
-              <div className="pt-8 border-t-2 border-sgma-navy/20">
-                <h3 className="text-2xl font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
-                  <span className="text-sgma-cta">Bookings</span> & Sessions
-                </h3>
-                <p className="text-sgma-charcoal leading-relaxed mb-6 text-sm">
-                  Online sacred geometry & mandala art workshops — hosted from India, open to participants worldwide. Secure your place with a deposit.
-                </p>
-                <ul className="space-y-3 text-sgma-charcoal text-sm">
-                  <li className="flex items-start gap-3 pl-2">
-                    <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
-                    <span className="pt-0.5">1-on-1 personalized guidance sessions</span>
-                  </li>
-                  <li className="flex items-start gap-3 pl-2">
-                    <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
-                    <span className="pt-0.5">Online workshops from India</span>
-                  </li>
-                  <li className="flex items-start gap-3 pl-2">
-                    <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
-                    <span className="pt-0.5">Global participation welcome</span>
-                  </li>
-                  <li className="flex items-start gap-3 pl-2">
-                    <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
-                    <span className="pt-0.5">Secure deposit to reserve your place</span>
-                  </li>
-                </ul>
-              </div>
+            {/* Bookings & Sessions Info */}
+            <div className="pt-8 border-t-2 border-sgma-navy/20">
+              <h3 className="text-2xl font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
+                <span className="text-sgma-cta">Bookings</span> & Sessions
+              </h3>
+              <p className="text-sgma-charcoal leading-relaxed mb-6 text-sm">
+                Online sacred geometry & mandala art workshops — hosted from India, open to participants worldwide. Secure your place with a deposit.
+              </p>
+              <ul className="space-y-3 text-sgma-charcoal text-sm">
+                <li className="flex items-start gap-3 pl-2">
+                  <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
+                  <span className="pt-0.5">1-on-1 personalized guidance sessions</span>
+                </li>
+                <li className="flex items-start gap-3 pl-2">
+                  <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
+                  <span className="pt-0.5">Online workshops from India</span>
+                </li>
+                <li className="flex items-start gap-3 pl-2">
+                  <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
+                  <span className="pt-0.5">Global participation welcome</span>
+                </li>
+                <li className="flex items-start gap-3 pl-2">
+                  <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
+                  <span className="pt-0.5">Secure deposit to reserve your place</span>
+                </li>
+              </ul>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Upcoming Workshops Section */}
+      <div className="py-12 px-4 relative z-10 bg-sgma-charcoal/5">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-sgma-charcoal text-center">
+            Upcoming Workshops
+          </h2>
+
+          {/* Workshop Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-3xl mx-auto">
+              <thead>
+                <tr className="border-b-2 border-sgma-navy/30">
+                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Workshop</th>
+                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Date</th>
+                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
+                  <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
+                    📐 Sacred Geometry
+                  </td>
+                  <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">17–18 Jan</td>
+                  <td className="py-4 px-6">
+                    <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
+                      Book →
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
+                  <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
+                    🌸 Flower of Life
+                  </td>
+                  <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">12 Jan</td>
+                  <td className="py-4 px-6">
+                    <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
+                      Book →
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
+                  <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
+                    🔄 Torus Foundations
+                  </td>
+                  <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">1 Feb</td>
+                  <td className="py-4 px-6">
+                    <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
+                      Book →
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
