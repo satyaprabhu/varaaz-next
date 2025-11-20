@@ -200,7 +200,7 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
 
     try {
       const coursePricing = COURSE_PRICING[selectedTopic]
-      const amount = selectedCurrency === 'INR' ? coursePricing.priceINR : coursePricing.priceUSD
+      const amount = selectedCurrency === 'INR' ? coursePricing.priceINR / 2 : coursePricing.priceUSD / 2
 
       // Step 1: Create Razorpay order
       const orderRes = await fetch('/api/razorpay/create-order', {
