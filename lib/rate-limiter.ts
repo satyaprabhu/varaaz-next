@@ -1,23 +1,9 @@
-import { Ratelimit } from 'ratelimit'
-
-// Create rate limiters for different endpoints
-export const createOrderRateLimiter = new Ratelimit({
-  redis: process.env.REDIS_URL ? undefined : undefined, // For production, use Redis
-  limiter: Ratelimit.slidingWindow(5, '1 m'), // 5 requests per 1 minute
-  analytics: true,
-  prefix: 'ratelimit:create-order',
-})
-
-export const verifyPaymentRateLimiter = new Ratelimit({
-  redis: process.env.REDIS_URL ? undefined : undefined,
-  limiter: Ratelimit.slidingWindow(10, '1 m'), // 10 requests per 1 minute
-  analytics: true,
-  prefix: 'ratelimit:verify-payment',
-})
-
 /**
- * Memory-based fallback rate limiter for local development
- * In production, use Redis-based Ratelimit
+ * Memory-based rate limiter for development
+ * For production with high traffic, consider Redis-based solutions like:
+ * - Vercel KV (recommended for Vercel deployment)
+ * - Redis Cloud
+ * - Upstash
  */
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
 
