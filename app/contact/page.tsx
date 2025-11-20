@@ -145,7 +145,7 @@ export default function ContactPage() {
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
 
-          <form onSubmit={handleSubmit} className="bg-white/70 backdrop-blur-sm border border-sgma-navy/10 rounded-lg p-8">
+          <form onSubmit={handleSubmit} className="bg-white/50 backdrop-blur-lg border border-white/30 rounded-lg p-8 shadow-lg">
             <div className="mb-6">
               <label htmlFor="name" className="block text-body font-semibold mb-2 text-sgma-charcoal">
                 Name
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 name="name"
                 type="text"
                 required
-                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
+                className="w-full px-4 py-2 bg-white/40 backdrop-blur-md border border-white/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-cta/40 focus:border-white/30"
               />
             </div>
 
@@ -168,7 +168,7 @@ export default function ContactPage() {
                 name="email"
                 type="email"
                 required
-                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
+                className="w-full px-4 py-2 bg-white/40 backdrop-blur-md border border-white/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-cta/40 focus:border-white/30"
               />
             </div>
 
@@ -181,7 +181,7 @@ export default function ContactPage() {
                 name="subject"
                 type="text"
                 required
-                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
+                className="w-full px-4 py-2 bg-white/40 backdrop-blur-md border border-white/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-cta/40 focus:border-white/30"
               />
             </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                 name="message"
                 rows={5}
                 required
-                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
+                className="w-full px-4 py-2 bg-white/40 backdrop-blur-md border border-white/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-cta/40 focus:border-white/30"
               />
             </div>
 
@@ -226,7 +226,7 @@ export default function ContactPage() {
               {faqs.map((faq) => (
                 <div
                   key={faq.id}
-                  className="bg-white/70 backdrop-blur-sm border border-sgma-navy/10 rounded-lg overflow-hidden transition-all duration-300"
+                  className="bg-white/50 backdrop-blur-lg border border-white/30 rounded-lg overflow-hidden transition-all duration-300 shadow-md"
                 >
                   <button
                     onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
@@ -255,39 +255,39 @@ export default function ContactPage() {
           </div>
 
           {/* Newsletter Section */}
-          <div id="newsletter" className="mt-20">
-            <h2 className="text-h3 font-black text-center mb-2 uppercase tracking-tight text-sgma-charcoal">
+          <div id="newsletter" className="mt-20 -mx-4 px-4 py-12 bg-gradient-to-r from-sgma-cta/5 via-sgma-cream/30 to-sgma-cta/5 rounded-2xl border border-sgma-cta/20 relative">
+            <h2 className="text-h2 md:text-h1 font-black text-center mb-3 uppercase tracking-tight text-sgma-charcoal">
               Stay Updated
             </h2>
-            <p className="text-center text-sgma-charcoal mb-4 text-body">
+            <p className="text-center text-sgma-charcoal mb-8 text-body-lg max-w-2xl mx-auto">
               Get updates on new courses, special offers, and mandala art inspiration delivered to your inbox.
             </p>
 
-            <form onSubmit={handleNewsletterSubmit} className="bg-white/70 backdrop-blur-sm border border-sgma-navy/10 rounded-lg p-5 max-w-md mx-auto">
-              <div className="mb-3">
+            <form onSubmit={handleNewsletterSubmit} className="bg-white/60 backdrop-blur-xl border-2 border-sgma-cta/40 rounded-xl p-8 max-w-lg mx-auto shadow-lg relative group">
+              <div className="mb-4">
                 <input
                   id="newsletter_name"
                   name="newsletter_name"
                   type="text"
                   required
                   placeholder="Your name"
-                  className="w-full px-3 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30 text-body"
+                  className="w-full px-4 py-3 bg-white/70 backdrop-blur-md border-2 border-sgma-cta/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/50 focus:outline-none focus:ring-2 focus:ring-sgma-cta/60 focus:border-sgma-cta/50 text-body font-medium"
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-4">
                 <input
                   id="newsletter_email"
                   name="newsletter_email"
                   type="email"
                   required
                   placeholder="your@email.com"
-                  className="w-full px-3 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30 text-body"
+                  className="w-full px-4 py-3 bg-white/70 backdrop-blur-md border-2 border-sgma-cta/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/50 focus:outline-none focus:ring-2 focus:ring-sgma-cta/60 focus:border-sgma-cta/50 text-body font-medium"
                 />
               </div>
 
               {newsletterMessage && (
-                <p className={`mb-3 text-center text-caption font-semibold ${newsletterMessage.includes('Successfully') ? 'text-green-600' : 'text-red-600'}`}>
+                <p className={`mb-4 text-center text-body font-semibold ${newsletterMessage.includes('Successfully') ? 'text-green-600' : 'text-red-600'}`}>
                   {newsletterMessage}
                 </p>
               )}
@@ -295,9 +295,9 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={newsletterLoading}
-                className="w-full bg-sgma-cta text-white py-2 rounded-lg font-bold hover:shadow-lg hover:shadow-sgma-cta/30 disabled:opacity-50 transition-all duration-300 text-body"
+                className="w-full bg-gradient-to-r from-sgma-cta to-sgma-navy text-white py-3 rounded-lg font-bold hover:shadow-xl hover:shadow-sgma-cta/40 disabled:opacity-50 transition-all duration-300 text-body uppercase tracking-widest"
               >
-                {newsletterLoading ? 'Subscribing...' : 'Subscribe'}
+                {newsletterLoading ? 'Subscribing...' : 'Subscribe Now'}
               </button>
             </form>
           </div>

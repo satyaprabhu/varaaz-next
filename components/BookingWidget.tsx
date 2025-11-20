@@ -555,7 +555,6 @@ export default function BookingWidget({ fallback = false }: BookingWidgetProps) 
                 <span className="text-lg font-black text-sgma-navy">Total Amount Due:</span>
                 <span className="text-2xl font-black text-sgma-cta">{kitPricing.symbol}{total}</span>
               </div>
-              <p className="text-xs text-sgma-charcoal/70">A 50% deposit ({kitPricing.symbol}{Math.ceil(total / 2)}) is required to secure your place.</p>
             </div>
           </div>
         </>

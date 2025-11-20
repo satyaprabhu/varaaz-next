@@ -68,27 +68,27 @@ export default function Header() {
         <div className="md:hidden border-t border-sgma-navy/20 bg-sgma-beige/98 backdrop-blur-sm">
           <ul className="flex flex-col gap-0 px-6 py-4 space-y-1">
             <li>
-              <Link href="/about" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
+              <Link href="/about" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/courses" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
+              <Link href="/courses" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 Courses
               </Link>
             </li>
             <li>
-              <Link href="/collection" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
+              <Link href="/collection" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 Collection
               </Link>
             </li>
             <li>
-              <Link href="/bookings" className="block px-4 py-3 text-body font-bold text-white bg-sgma-cta rounded-lg hover:shadow-md hover:shadow-sgma-cta/50 hover:bg-sgma-cta/90 transition-all duration-200 mt-2 text-center uppercase tracking-wide text-caption">
+              <Link href="/bookings" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-body font-bold text-white bg-sgma-cta rounded-lg hover:shadow-md hover:shadow-sgma-cta/50 hover:bg-sgma-cta/90 transition-all duration-200 mt-2 text-center uppercase tracking-wide text-caption">
                 Book Session
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 Contact
               </Link>
             </li>

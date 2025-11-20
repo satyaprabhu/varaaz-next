@@ -112,13 +112,14 @@ export default function TeamSection() {
       <div className="grid md:grid-cols-4 gap-8 items-start">
         {/* Left Column - Team Member Image */}
         {selectedMember && (
-          <div className="md:sticky md:top-0">
-            <div className="relative w-full md:w-60 h-60 md:h-80 rounded-lg overflow-hidden shadow-lg">
+          <div className="md:sticky md:top-0 w-full md:w-auto">
+            <div className="relative w-full md:w-60 h-96 md:h-80 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src={selectedMember.image}
                 alt={selectedMember.name}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
+                priority
               />
             </div>
           </div>

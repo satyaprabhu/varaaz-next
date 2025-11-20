@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-12 px-4 bg-gradient-to-b from-sgma-beige via-white to-white relative z-10">
+    <section className="py-6 px-4 bg-gradient-to-b from-sgma-cream to-sgma-cream/80 relative z-10">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

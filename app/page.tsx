@@ -129,7 +129,7 @@ export default async function Home() {
       </div>
 
       {/* Hero Section with Course Introduction - Merged */}
-      <section className="pt-12 pb-8 px-4 bg-sgma-beige relative overflow-hidden z-10">
+      <section className="py-8 px-4 bg-sgma-beige relative overflow-hidden z-10">
         {/* Decorative sacred geometry elements with animations */}
         <div className="absolute top-10 right-10 opacity-5 pointer-events-none float-element">
           <div className="text-6xl slow-rotate inline-block">✦</div>
@@ -172,10 +172,12 @@ export default async function Home() {
             </Link>
           </div>
         </div>
+        {/* Gradient Blend to Next Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-sgma-beige pointer-events-none"></div>
       </section>
 
       {/* Featured Courses Section */}
-      <section className="py-12 px-4 bg-gradient-to-b from-sgma-beige via-sgma-beige to-white relative z-10">
+      <section className="py-8 px-4 bg-gradient-to-b from-sgma-beige to-sgma-cream relative z-10">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-h2 md:text-h1 font-black text-center mb-16 uppercase tracking-tight text-sgma-charcoal">
             Featured Courses
@@ -263,10 +265,12 @@ export default async function Home() {
             </Link>
           </div>
         </div>
+        {/* Gradient Blend to Next Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-sgma-cream pointer-events-none"></div>
       </section>
 
       {/* Does This Sound Like You Section */}
-      <section className="py-4 px-4 bg-white relative z-10">
+      <section className="py-8 px-4 bg-gradient-to-b from-sgma-cream to-sgma-beige/80 relative z-10">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-h2 md:text-h1 font-black text-center mb-16 uppercase tracking-tight text-sgma-charcoal">
             Does This Sound Like<span className="text-sgma-navy"> You?</span>
@@ -339,10 +343,12 @@ export default async function Home() {
             </div>
           </div>
         </div>
+        {/* Gradient Blend to Next Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-sgma-beige/80 pointer-events-none"></div>
       </section>
 
       {/* How SGMA Transforms Your Practice Section */}
-      <section className="py-12 px-4 bg-gradient-to-b from-white via-sgma-beige/60 to-sgma-beige relative z-10">
+      <section className="py-8 px-4 bg-gradient-to-b from-sgma-beige/80 via-sgma-cream to-sgma-cream/80 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-h2 md:text-h1 font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">
@@ -410,13 +416,15 @@ export default async function Home() {
             </p>
           </div>
         </div>
+        {/* Gradient Blend to Next Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-sgma-cream/80 pointer-events-none"></div>
       </section>
 
       {/* Testimonials Section */}
       <TestimonialsSection />
 
       {/* Why SGMA Is Different Section */}
-      <section className="py-12 px-4 bg-gradient-to-b from-white via-white to-sgma-beige/40 relative z-10">
+      <section className="py-8 px-4 bg-gradient-to-b from-sgma-cream/80 to-sgma-beige/60 relative z-10">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-h2 md:text-h1 font-black text-center mb-16 uppercase tracking-tight text-sgma-charcoal">
             Why SGMA Is<span className="text-sgma-navy"> Different</span>
@@ -512,6 +520,8 @@ export default async function Home() {
             </div>
           </div>
         </div>
+        {/* Gradient Blend to Footer */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-sgma-beige/40 pointer-events-none"></div>
       </section>
 
     </div>

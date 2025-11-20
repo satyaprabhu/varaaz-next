@@ -123,17 +123,17 @@ export default function BookingsPage() {
             <table className="w-full max-w-3xl mx-auto">
               <thead>
                 <tr className="border-b-2 border-sgma-navy/30">
-                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Workshop</th>
-                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Date</th>
+                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-body tracking-wider">Workshop</th>
+                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-body tracking-wider">Date</th>
                 </tr>
               </thead>
               <tbody>
                 {COURSE_SESSIONS.map((session) => (
                   <tr key={session.id} className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
-                    <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
+                    <td className="py-4 px-6 text-sgma-charcoal font-bold text-body">
                       {session.icon} {session.name}
                     </td>
-                    <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">{session.batchDate}</td>
+                    <td className="py-4 px-6 text-sgma-charcoal font-medium text-body">{session.batchDate}</td>
                   </tr>
                 ))}
               </tbody>
