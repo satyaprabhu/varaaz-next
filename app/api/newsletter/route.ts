@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     console.log('Brevo response status:', brevoResponse.status)
     console.log('Brevo response text:', responseText)
 
-    let brevoData = {}
+    let brevoData: { code?: string; message?: string; id?: string } = {}
     if (responseText) {
       brevoData = JSON.parse(responseText)
     }
