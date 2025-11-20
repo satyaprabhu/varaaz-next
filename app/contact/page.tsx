@@ -12,6 +12,8 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
+  const [newsletterLoading, setNewsletterLoading] = useState(false)
+  const [newsletterMessage, setNewsletterMessage] = useState('')
 
   const faqs: FAQItem[] = [
     {
@@ -52,7 +54,7 @@ export default function ContactPage() {
     {
       id: 8,
       question: "What payment methods do you accept?",
-      answer: "We accept credit/debit cards, net banking, UPI (for India), and PayPal. All transactions are secure and encrypted. Bank transfer is also available for Indian participants."
+      answer: "We accept international and Indian payment methods: credit/debit cards, net banking, UPI, PayPal, and bank transfer. All transactions are secure and encrypted. For bookings, we require a minimum 50% course fee deposit to secure your place."
     }
   ]
 
@@ -83,74 +85,69 @@ export default function ContactPage() {
     }
   }
 
-  return (
-    <div className="min-h-screen bg-sgma-cream relative text-sgma-charcoal">
-      {/* Sri Chakra Mandala Background */}
-      <div className="fixed inset-0 opacity-5 pointer-events-none z-0">
-        <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <radialGradient id="mandalGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#FFD500" stopOpacity="0.8"/>
-              <stop offset="25%" stopColor="#FFD500" stopOpacity="0.4"/>
-              <stop offset="50%" stopColor="#C5A900" stopOpacity="0.15"/>
-              <stop offset="100%" stopColor="#C5A900" stopOpacity="0"/>
-            </radialGradient>
-            <filter id="goldenGlow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-            <g id="sriChakra">
-              <circle cx="100" cy="100" r="95" fill="none" stroke="#C5A900" strokeWidth="0.5" opacity="0.07"/>
-              <polygon points="100,30 140,80 60,80" fill="none" stroke="#C5A900" strokeWidth="0.5" opacity="0.08"/>
-              <polygon points="100,45 130,80 70,80" fill="none" stroke="#C5A900" strokeWidth="0.5" opacity="0.08"/>
-              <polygon points="100,60 120,80 80,80" fill="none" stroke="#C5A900" strokeWidth="0.5" opacity="0.08"/>
-              <polygon points="100,170 140,120 60,120" fill="none" stroke="#FFD500" strokeWidth="0.5" opacity="0.09"/>
-              <polygon points="100,155 130,120 70,120" fill="none" stroke="#FFD500" strokeWidth="0.5" opacity="0.09"/>
-              <polygon points="100,140 120,120 80,120" fill="none" stroke="#FFD500" strokeWidth="0.5" opacity="0.09"/>
-              <circle cx="100" cy="100" r="85" fill="none" stroke="#C5A900" strokeWidth="0.3" opacity="0.07"/>
-              <circle cx="100" cy="100" r="75" fill="none" stroke="#FFD500" strokeWidth="0.3" opacity="0.08"/>
-              <circle cx="100" cy="100" r="65" fill="none" stroke="#C5A900" strokeWidth="0.3" opacity="0.07"/>
-              <circle cx="100" cy="100" r="55" fill="none" stroke="#FFD500" strokeWidth="0.3" opacity="0.08"/>
-              <circle cx="100" cy="100" r="45" fill="none" stroke="#C5A900" strokeWidth="0.3" opacity="0.07"/>
-              <circle cx="100" cy="100" r="35" fill="none" stroke="#FFD500" strokeWidth="0.3" opacity="0.08"/>
-              <circle cx="100" cy="100" r="8" fill="#FFD500" opacity="0.1"/>
-              <circle cx="100" cy="100" r="5" fill="#C5A900" opacity="0.12"/>
-              <line x1="100" y1="10" x2="100" y2="190" stroke="#C5A900" strokeWidth="0.3" opacity="0.07"/>
-              <line x1="10" y1="100" x2="190" y2="100" stroke="#C5A900" strokeWidth="0.3" opacity="0.07"/>
-              <line x1="30" y1="30" x2="170" y2="170" stroke="#FFD500" strokeWidth="0.3" opacity="0.08"/>
-              <line x1="170" y1="30" x2="30" y2="170" stroke="#FFD500" strokeWidth="0.3" opacity="0.08"/>
-            </g>
-          </defs>
-          <circle cx="100" cy="100" r="120" fill="url(#mandalGlow)" opacity="0.6"/>
-          <circle cx="100" cy="100" r="80" fill="url(#mandalGlow)" opacity="0.4"/>
-          <circle cx="100" cy="100" r="40" fill="url(#mandalGlow)" opacity="0.3"/>
-          <g filter="url(#goldenGlow)">
-            <use href="#sriChakra" x="0" y="0"/>
-            <use href="#sriChakra" x="200" y="0"/>
-            <use href="#sriChakra" x="-200" y="0"/>
-            <use href="#sriChakra" x="0" y="200"/>
-            <use href="#sriChakra" x="200" y="200"/>
-            <use href="#sriChakra" x="-200" y="200"/>
-            <use href="#sriChakra" x="0" y="-200"/>
-            <use href="#sriChakra" x="200" y="-200"/>
-            <use href="#sriChakra" x="-200" y="-200"/>
-          </g>
-        </svg>
-      </div>
+  const handleNewsletterSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setNewsletterLoading(true)
+    setNewsletterMessage('')
 
-      <div className="py-20 px-4 relative z-10">
+    const formData = new FormData(e.currentTarget)
+    const name = formData.get('newsletter_name')
+    const email = formData.get('newsletter_email')
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email }),
+      })
+
+      if (res.ok) {
+        setNewsletterMessage('Successfully subscribed! Check your email for confirmation.')
+        e.currentTarget.reset()
+      } else {
+        const text = await res.text()
+        const data = text ? JSON.parse(text) : {}
+        setNewsletterMessage(data.error || 'Failed to subscribe. Please try again.')
+      }
+    } catch (error) {
+      console.error('Newsletter form error:', error)
+      setNewsletterMessage('An error occurred. Please try again.')
+    } finally {
+      setNewsletterLoading(false)
+    }
+  }
+
+  // Generate FAQPage schema for Google
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-sgma-beige via-sgma-beige/40 to-sgma-beige/10 relative text-sgma-charcoal">
+      <div className="py-8 px-4">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">Get In Touch</h1>
-          <p className="text-center text-sgma-charcoal mb-12 text-lg">
+          <h1 className="text-h1 md:text-display-sm font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">Get In Touch</h1>
+          <p className="text-center text-sgma-charcoal mb-12 text-body-lg">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
 
-          <form onSubmit={handleSubmit} className="bg-white border border-sgma-navy/20 rounded-lg p-8 shadow-sm">
+          <form onSubmit={handleSubmit} className="bg-white/70 backdrop-blur-sm border border-sgma-navy/10 rounded-lg p-8">
             <div className="mb-6">
-              <label htmlFor="name" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
+              <label htmlFor="name" className="block text-body font-semibold mb-2 text-sgma-charcoal">
                 Name
               </label>
               <input
@@ -158,12 +155,12 @@ export default function ContactPage() {
                 name="name"
                 type="text"
                 required
-                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
+                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="email" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
+              <label htmlFor="email" className="block text-body font-semibold mb-2 text-sgma-charcoal">
                 Email
               </label>
               <input
@@ -171,12 +168,12 @@ export default function ContactPage() {
                 name="email"
                 type="email"
                 required
-                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
+                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
+              <label htmlFor="subject" className="block text-body font-semibold mb-2 text-sgma-charcoal">
                 Subject
               </label>
               <input
@@ -184,12 +181,12 @@ export default function ContactPage() {
                 name="subject"
                 type="text"
                 required
-                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
+                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-semibold mb-2 text-sgma-charcoal">
+              <label htmlFor="message" className="block text-body font-semibold mb-2 text-sgma-charcoal">
                 Message
               </label>
               <textarea
@@ -197,7 +194,7 @@ export default function ContactPage() {
                 name="message"
                 rows={5}
                 required
-                className="w-full px-4 py-2 bg-white border border-sgma-navy/20 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/30 focus:border-sgma-navy"
+                className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30"
               />
             </div>
 
@@ -218,10 +215,10 @@ export default function ContactPage() {
 
           {/* FAQ Section */}
           <div id="faqs" className="mt-20">
-            <h2 className="text-4xl md:text-5xl font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">
-              Frequently Asked <span className="text-sgma-navy">Questions</span>
+            <h2 className="text-h1 md:text-display-sm font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">
+              Frequently Asked Questions
             </h2>
-            <p className="text-center text-sgma-charcoal mb-12 text-lg">
+            <p className="text-center text-sgma-charcoal mb-12 text-body-lg">
               Can't find what you're looking for? Reach out to us directly above.
             </p>
 
@@ -229,13 +226,13 @@ export default function ContactPage() {
               {faqs.map((faq) => (
                 <div
                   key={faq.id}
-                  className="bg-white border border-sgma-navy/20 rounded-lg overflow-hidden hover:border-sgma-navy hover:shadow-sm transition-all duration-300"
+                  className="bg-white/70 backdrop-blur-sm border border-sgma-navy/10 rounded-lg overflow-hidden transition-all duration-300"
                 >
                   <button
                     onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
                     className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-sgma-navy/5 transition-colors duration-200"
                   >
-                    <h3 className="text-lg font-bold text-sgma-charcoal uppercase tracking-tight pr-4">
+                    <h3 className="text-h4 font-bold text-sgma-charcoal uppercase tracking-tight pr-4">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0 text-sgma-navy text-2xl font-light transition-transform duration-300" style={{
@@ -247,7 +244,7 @@ export default function ContactPage() {
 
                   {expandedFAQ === faq.id && (
                     <div className="px-6 py-5 bg-sgma-cream border-t border-sgma-navy/20">
-                      <p className="text-sgma-charcoal leading-relaxed">
+                      <p className="text-body text-sgma-charcoal leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -256,8 +253,57 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
+
+          {/* Newsletter Section */}
+          <div id="newsletter" className="mt-20">
+            <h2 className="text-h3 font-black text-center mb-2 uppercase tracking-tight text-sgma-charcoal">
+              Stay Updated
+            </h2>
+            <p className="text-center text-sgma-charcoal mb-4 text-body">
+              Get updates on new courses, special offers, and mandala art inspiration delivered to your inbox.
+            </p>
+
+            <form onSubmit={handleNewsletterSubmit} className="bg-white/70 backdrop-blur-sm border border-sgma-navy/10 rounded-lg p-5 max-w-md mx-auto">
+              <div className="mb-3">
+                <input
+                  id="newsletter_name"
+                  name="newsletter_name"
+                  type="text"
+                  required
+                  placeholder="Your name"
+                  className="w-full px-3 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30 text-body"
+                />
+              </div>
+
+              <div className="mb-3">
+                <input
+                  id="newsletter_email"
+                  name="newsletter_email"
+                  type="email"
+                  required
+                  placeholder="your@email.com"
+                  className="w-full px-3 py-2 bg-white/50 backdrop-blur-sm border border-sgma-navy/10 rounded-lg text-sgma-charcoal placeholder-sgma-charcoal/40 focus:outline-none focus:ring-2 focus:ring-sgma-navy/20 focus:border-sgma-navy/30 text-body"
+                />
+              </div>
+
+              {newsletterMessage && (
+                <p className={`mb-3 text-center text-caption font-semibold ${newsletterMessage.includes('Successfully') ? 'text-green-600' : 'text-red-600'}`}>
+                  {newsletterMessage}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={newsletterLoading}
+                className="w-full bg-sgma-cta text-white py-2 rounded-lg font-bold hover:shadow-lg hover:shadow-sgma-cta/30 disabled:opacity-50 transition-all duration-300 text-body"
+              >
+                {newsletterLoading ? 'Subscribing...' : 'Subscribe'}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
+    </>
   )
 }

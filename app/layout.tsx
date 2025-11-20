@@ -3,6 +3,7 @@ import { Belleza } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+// import NewsletterModal from '@/components/NewsletterModal' // TODO: Enable when needed
 
 const belleza = Belleza({
   subsets: ['latin'],

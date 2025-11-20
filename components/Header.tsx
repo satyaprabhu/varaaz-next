@@ -8,9 +8,9 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-sgma-beige/90 backdrop-blur-md border-b border-sgma-navy/10 sticky top-0 z-50 shadow-sm">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center flex-shrink-0 hover:opacity-80 transition-opacity duration-300">
+    <header className="bg-sgma-beige/95 backdrop-blur-md border-b border-sgma-navy/20 sticky top-0 z-50 shadow-md">
+      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center flex-shrink-0 hover:opacity-85 transition-opacity duration-300">
           <Image
             src="/images/Sgma-logo-1.png"
             alt="SGMA Logo"
@@ -19,33 +19,33 @@ export default function Header() {
             className="w-12 h-12 flex-shrink-0 shadow-md hover:shadow-lg transition-shadow duration-300"
             priority
           />
-          <span className="ml-2 text-lg font-bold text-sgma-charcoal hidden sm:inline">SGMA</span>
+          <span className="ml-3 text-h4 font-black text-sgma-charcoal hidden sm:inline uppercase tracking-tight">SGMA</span>
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 items-center">
+        <ul className="hidden md:flex gap-10 items-center">
           <li>
-            <Link href="/about" className="text-sgma-charcoal hover:text-sgma-navy transition">
+            <Link href="/about" className="text-body font-semibold text-sgma-charcoal hover:text-sgma-navy hover:underline underline-offset-4 transition-all duration-200">
               About
             </Link>
           </li>
           <li>
-            <Link href="/courses" className="text-sgma-charcoal hover:text-sgma-navy transition">
+            <Link href="/courses" className="text-body font-semibold text-sgma-charcoal hover:text-sgma-navy hover:underline underline-offset-4 transition-all duration-200">
               Courses
             </Link>
           </li>
           <li>
-            <Link href="/collection" className="text-sgma-charcoal hover:text-sgma-navy transition">
+            <Link href="/collection" className="text-body font-semibold text-sgma-charcoal hover:text-sgma-navy hover:underline underline-offset-4 transition-all duration-200">
               Collection
             </Link>
           </li>
           <li>
-            <Link href="/bookings" className="px-4 py-2 bg-sgma-cta text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300">
+            <Link href="/bookings" className="px-6 py-3 bg-sgma-cta text-white rounded-lg font-bold uppercase tracking-wide text-caption hover:shadow-lg hover:shadow-sgma-cta/50 hover:bg-sgma-cta/90 transition-all duration-300">
               Book Session
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="text-sgma-charcoal hover:text-sgma-navy transition">
+            <Link href="/contact" className="text-body font-semibold text-sgma-charcoal hover:text-sgma-navy hover:underline underline-offset-4 transition-all duration-200">
               Contact
             </Link>
           </li>
@@ -65,30 +65,30 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-sgma-navy/10 bg-sgma-beige">
-          <ul className="flex flex-col gap-0 px-4 py-4">
+        <div className="md:hidden border-t border-sgma-navy/20 bg-sgma-beige/98 backdrop-blur-sm">
+          <ul className="flex flex-col gap-0 px-6 py-4 space-y-1">
             <li>
-              <Link href="/about" className="block py-3 text-sgma-charcoal hover:text-sgma-navy transition font-semibold">
+              <Link href="/about" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/courses" className="block py-3 text-sgma-charcoal hover:text-sgma-navy transition font-semibold">
+              <Link href="/courses" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 Courses
               </Link>
             </li>
             <li>
-              <Link href="/collection" className="block py-3 text-sgma-charcoal hover:text-sgma-navy transition font-semibold">
+              <Link href="/collection" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 Collection
               </Link>
             </li>
             <li>
-              <Link href="/bookings" className="block py-3 text-sgma-charcoal hover:text-sgma-navy transition font-semibold">
+              <Link href="/bookings" className="block px-4 py-3 text-body font-bold text-white bg-sgma-cta rounded-lg hover:shadow-md hover:shadow-sgma-cta/50 hover:bg-sgma-cta/90 transition-all duration-200 mt-2 text-center uppercase tracking-wide text-caption">
                 Book Session
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="block py-3 text-sgma-charcoal hover:text-sgma-navy transition font-semibold">
+              <Link href="/contact" className="block px-4 py-3 text-body font-bold text-sgma-charcoal hover:text-sgma-navy hover:bg-sgma-navy/5 rounded-lg transition-all duration-200">
                 Contact
               </Link>
             </li>

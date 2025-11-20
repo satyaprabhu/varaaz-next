@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-4 px-4 bg-white relative z-10">
+    <section className="py-12 px-4 bg-gradient-to-b from-sgma-beige via-white to-white relative z-10">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
                   </div>
                   <div>
                     <p className="font-bold text-sgma-charcoal text-sm">{testimonial.author}</p>
-                    <p className="text-xs text-sgma-charcoal/60 uppercase tracking-widest font-semibold">
+                    <p className="text-xs text-sgma-charcoal/70 uppercase tracking-widest font-semibold">
                       {testimonial.title}, {testimonial.location}
                     </p>
                     <p className="text-xs text-sgma-cta uppercase tracking-widest font-semibold mt-1">

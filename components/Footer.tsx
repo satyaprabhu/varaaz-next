@@ -51,9 +51,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors duration-300 inline-block">
+                <Link href="/privacy-policy" className="text-white/80 hover:text-white transition-colors duration-300 inline-block">
                   Privacy Policy
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-and-conditions" className="text-white/80 hover:text-white transition-colors duration-300 inline-block">
+                  Terms & Conditions
+                </Link>
               </li>
             </ul>
           </div>
@@ -85,8 +90,8 @@ export default function Footer() {
         <div className="border-t border-white/20 my-8"></div>
 
         {/* Footer Bottom */}
-        <div className="text-center text-base text-white/60">
-          <p>&copy; 2024 SGMA. All rights reserved.</p>
+        <div className="text-center text-base text-white/70">
+          <p>&copy; 2025 SGMA. All rights reserved.</p>
         </div>
       </div>
     </footer>

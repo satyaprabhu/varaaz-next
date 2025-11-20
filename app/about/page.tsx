@@ -10,7 +10,7 @@ export default async function AboutPage() {
   const { content, data } = post
 
   return (
-    <div className="min-h-screen bg-sgma-beige relative text-sgma-charcoal">
+    <div className="min-h-screen bg-gradient-to-b from-sgma-beige via-sgma-beige/40 to-sgma-beige/10 relative text-sgma-charcoal">
       {/* Sri Chakra Mandala Background - Soft Gold/Pale Yellow with Radiant Glow */}
       <div className="fixed inset-0 opacity-5 pointer-events-none z-0">
         <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -86,8 +86,8 @@ export default async function AboutPage() {
         </svg>
       </div>
 
-      {/* Hero Section - Bold & Edgy */}
-      <div className="py-16 px-4 bg-sgma-beige relative overflow-hidden z-10">
+      {/* Hero Section */}
+      <div className="py-8 px-4 relative overflow-hidden z-10">
         {/* Decorative sacred geometry elements */}
         <div className="absolute top-5 right-5 opacity-5 pointer-events-none">
           <div className="text-6xl">🌀</div>
@@ -97,126 +97,127 @@ export default async function AboutPage() {
         </div>
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-black mb-4 leading-tight text-sgma-charcoal uppercase">
+          <h1 className="text-h1 md:text-display-sm font-black mb-4 leading-tight text-sgma-charcoal uppercase">
             About SGMA Studio
           </h1>
-          <p className="text-lg md:text-xl text-sgma-charcoal max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-body-lg md:text-body-lg text-sgma-charcoal max-w-2xl mx-auto leading-relaxed font-light">
             Where ancient Vedic wisdom collides with contemporary art therapy.
           </p>
         </div>
       </div>
 
-      {/* About SGMA Studio Section */}
-      <div className="pt-8 pb-20 px-4 bg-sgma-beige relative z-10">
+      {/* Main Content Section */}
+      <div className="px-4 py-8 relative z-10">
         <div className="max-w-5xl mx-auto">
-          {/* About SGMA - Introduction */}
+          {/* About Introduction */}
           <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
+            <h2 className="text-h2 md:text-h1 font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
               Our Story - SGMA Studio
             </h2>
-            <p className="text-lg text-sgma-charcoal leading-relaxed mb-6">
+            <p className="text-body-lg text-sgma-charcoal leading-relaxed mb-4">
               Sacred Geometry Mandala Art Studio has quickly established itself as a leading educational centre with an international reputation both online and offline. Our focus is to realign the Arts language, bridge the gap of fragmented concepts of mandala and Soul Sciences, and our connection with them.
             </p>
-            <p className="text-lg text-sgma-charcoal leading-relaxed">
+            <p className="text-body-lg text-sgma-charcoal leading-relaxed">
               We invite you to join us at the alchemical melting pot for Mandala art that is SGMA Studio, set in the heart of urban Chennai with cultural backdrop, to experience how Sacred Geometry Mandala Art, the language of the 'ever-true - the eternally existent', can be a powerful means to this end.
             </p>
           </div>
 
-          {/* Mission Statement */}
-          <div className="mb-20 bg-sgma-charcoal/10 border border-sgma-navy/20 rounded-xl p-12 backdrop-blur-sm">
-            <h3 className="text-3xl font-black uppercase tracking-tight text-sgma-navy mb-6">Our Purpose</h3>
-            <p className="text-lg text-sgma-charcoal leading-relaxed">
+          {/* Purpose Statement - Subtle Card */}
+          <div className="mb-12 bg-white/60 border border-sgma-navy/10 rounded-lg p-8">
+            <h3 className="text-h3 font-black uppercase tracking-tight text-sgma-navy mb-4">Our Purpose</h3>
+            <p className="text-body-lg text-sgma-charcoal leading-relaxed">
               At SGMA Studio, we believe that Sacred Geometry is the universal language of creation—a reflection of harmony, proportion, and consciousness through art. Through Mandala Art, we explore the "ever-true," the eternally existent, connecting mathematical order with spiritual insight and artistic expression.
             </p>
           </div>
 
-          <TeamSection />
+          {/* Team Section */}
+          <div className="mb-12 border-t border-sgma-navy/10 pt-8">
+            <TeamSection />
+          </div>
 
           {/* Life at SGMA */}
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
+          <div className="mb-12 border-t border-sgma-navy/10 pt-8">
+            <h2 className="text-h2 md:text-h1 font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
               Life at SGMA
             </h2>
-            <p className="text-lg text-sgma-charcoal leading-relaxed">
+            <p className="text-body-lg text-sgma-charcoal leading-relaxed">
               A week rarely passes without something soul-nourishing, from hands-on art and geometry workshops to explorations in natural pigments, storytelling collaborations, and pilgrimages to sacred temples and nature sanctuaries. Many of our courses have become seasonal favorites, appearing two or three times a year, while new offerings continually blossom in response to the living needs of our creative community.
             </p>
           </div>
 
-          {/* Why Join SGMA Courses - 2 Column Layout */}
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
+          {/* Why Join SGMA Courses */}
+          <div className="mb-12 border-t border-sgma-navy/10 pt-8">
+            <h2 className="text-h2 md:text-h1 font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
               Why Join SGMA Courses?
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex gap-4 items-start">
                 <span className="text-2xl flex-shrink-0 w-8 h-8 rounded-lg bg-sgma-cta/20 flex items-center justify-center">👨‍🏫</span>
                 <div>
-                  <h3 className="font-bold text-sgma-cta mb-1">Learn from Experts</h3>
-                  <p className="text-sgma-charcoal">Learn from experienced practitioners skilled in both art and ancient philosophy</p>
+                  <h3 className="text-h4 font-bold text-sgma-cta mb-1">Learn from Experts</h3>
+                  <p className="text-body text-sgma-charcoal">Learn from experienced practitioners skilled in both art and ancient philosophy</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
                 <span className="text-2xl flex-shrink-0 w-8 h-8 rounded-lg bg-sgma-cta/20 flex items-center justify-center">🎨</span>
                 <div>
-                  <h3 className="font-bold text-sgma-cta mb-1">Master Techniques</h3>
-                  <p className="text-sgma-charcoal">Master artistic techniques and color skills rooted in ancient wisdom</p>
+                  <h3 className="text-h4 font-bold text-sgma-cta mb-1">Master Techniques</h3>
+                  <p className="text-body text-sgma-charcoal">Master artistic techniques and color skills rooted in ancient wisdom</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
                 <span className="text-2xl flex-shrink-0 w-8 h-8 rounded-lg bg-sgma-cta/20 flex items-center justify-center">🧘</span>
                 <div>
-                  <h3 className="font-bold text-sgma-cta mb-1">Find Your Path</h3>
-                  <p className="text-sgma-charcoal">Reflect, create, and experience mandala art as a path to mindfulness and self-discovery</p>
+                  <h3 className="text-h4 font-bold text-sgma-cta mb-1">Find Your Path</h3>
+                  <p className="text-body text-sgma-charcoal">Reflect, create, and experience mandala art as a path to mindfulness and self-discovery</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
                 <span className="text-2xl flex-shrink-0 w-8 h-8 rounded-lg bg-sgma-cta/20 flex items-center justify-center">✨</span>
                 <div>
-                  <h3 className="font-bold text-sgma-cta mb-1">Join the Community</h3>
-                  <p className="text-sgma-charcoal">Participate in live demonstrations, hands-on workshops, and enriching symposia open to all levels</p>
+                  <h3 className="text-h4 font-bold text-sgma-cta mb-1">Join the Community</h3>
+                  <p className="text-body text-sgma-charcoal">Participate in live demonstrations, hands-on workshops, and enriching symposia open to all levels</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Understanding Mandalas */}
-          <div className="bg-sgma-charcoal/10 border border-sgma-navy/20 rounded-xl p-12 backdrop-blur-sm">
-            <h3 className="text-3xl font-black uppercase tracking-tight text-sgma-navy mb-6">Understanding Mandalas</h3>
-            <p className="text-lg text-sgma-charcoal leading-relaxed">
+          <div className="mb-12 bg-white/60 border border-sgma-navy/10 rounded-lg p-8">
+            <h3 className="text-h3 font-black uppercase tracking-tight text-sgma-navy mb-4">Understanding Mandalas</h3>
+            <p className="text-body-lg text-sgma-charcoal leading-relaxed">
               Mandalas, in essence, can be understood to be diagrams, patterns and pictures that are distillations of ancient wisdom and harmony. Mandalas offer a potentially powerful means of deepening one's spiritual and contemplative practice. This is especially true when they are constructed—using the traditional tools of compass and straightedge—in a considered and contemplative manner.
             </p>
           </div>
 
-          {/* Inspirational CTA Section */}
-          <div className="mt-20 py-20 px-8 bg-sgma-beige border border-sgma-navy/20 rounded-xl">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
-                Ready to Transform Your Practice?
-              </h2>
+          {/* CTA Section */}
+          <div className="bg-sgma-beige/20 border-2 border-sgma-beige/40 rounded-lg p-10 text-center">
+            <h2 className="text-h2 md:text-h1 font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
+              Ready to Transform Your Practice?
+            </h2>
 
-              <p className="text-lg md:text-xl text-sgma-charcoal leading-relaxed mb-6">
-                Your journey toward deeper consciousness, artistic mastery, and spiritual awakening begins here. Through sacred geometry and mandala art, you'll discover the profound connection between creation and consciousness—unlocking new dimensions of your creative potential and inner peace.
-              </p>
+            <p className="text-body-lg text-sgma-charcoal leading-relaxed mb-4 max-w-3xl mx-auto">
+              Your journey toward deeper consciousness, artistic mastery, and spiritual awakening begins here. Through sacred geometry and mandala art, you'll discover the profound connection between creation and consciousness—unlocking new dimensions of your creative potential and inner peace.
+            </p>
 
-              <p className="text-lg text-sgma-charcoal leading-relaxed mb-12 font-light">
-                The path of transformation awaits. Every brushstroke is a meditation. Every pattern is a reflection of the universe within you. Take the first step today and join a community of seekers committed to exploring the sacred geometry of existence.
-              </p>
+            <p className="text-body-lg text-sgma-charcoal leading-relaxed mb-8 font-light max-w-3xl mx-auto">
+              The path of transformation awaits. Every brushstroke is a meditation. Every pattern is a reflection of the universe within you. Take the first step today and join a community of seekers committed to exploring the sacred geometry of existence.
+            </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/courses" className="group relative inline-block">
-                  <div className="absolute inset-0 bg-sgma-cta opacity-75 group-hover:opacity-100 rounded-lg blur-md transition-all duration-300 -z-10"></div>
-                  <div className="bg-sgma-cta text-white px-8 py-4 rounded-lg font-bold uppercase tracking-widest hover:shadow-2xl hover:shadow-sgma-cta/50 transition-all duration-300">
-                    Explore Courses
-                  </div>
-                </a>
-                <a href="/bookings" className="group relative inline-block">
-                  <div className="absolute inset-0 bg-sgma-cta opacity-20 group-hover:opacity-40 rounded-lg blur-md transition-all duration-300 -z-10"></div>
-                  <div className="bg-transparent border-2 border-sgma-cta text-sgma-cta px-8 py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-sgma-cta/10 transition-all duration-300">
-                    Book a Session
-                  </div>
-                </a>
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/courses" className="group relative inline-block">
+                <div className="absolute inset-0 bg-sgma-cta opacity-75 group-hover:opacity-100 rounded-lg blur-md transition-all duration-300 -z-10"></div>
+                <div className="bg-sgma-cta text-white px-8 py-4 rounded-lg font-bold uppercase tracking-widest hover:shadow-2xl hover:shadow-sgma-cta/50 transition-all duration-300">
+                  Explore Courses
+                </div>
+              </a>
+              <a href="/bookings" className="group relative inline-block">
+                <div className="absolute inset-0 bg-sgma-cta opacity-20 group-hover:opacity-40 rounded-lg blur-md transition-all duration-300 -z-10"></div>
+                <div className="bg-transparent border-2 border-sgma-cta text-sgma-cta px-8 py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-sgma-cta/10 transition-all duration-300">
+                  Book a Session
+                </div>
+              </a>
             </div>
           </div>
         </div>

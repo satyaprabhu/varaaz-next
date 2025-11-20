@@ -1,13 +1,12 @@
 'use client'
 
-import { useState } from 'react'
 import BookingWidget from '@/components/BookingWidget'
+import { COURSE_SESSIONS } from '@/lib/courseSchedule'
 
 export default function BookingsPage() {
-  const [showFallback, setShowFallback] = useState(true)
 
   return (
-    <div className="min-h-screen bg-sgma-beige relative text-sgma-charcoal">
+    <div className="min-h-screen bg-gradient-to-b from-sgma-beige via-sgma-beige/40 to-sgma-beige/10 relative text-sgma-charcoal">
       {/* Sri Chakra Mandala Background */}
       <div className="fixed inset-0 opacity-5 pointer-events-none z-0">
         <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -69,52 +68,27 @@ export default function BookingsPage() {
           {/* Book a Session - Centered */}
           <div className="max-w-2xl mx-auto mb-16">
             <div className="text-center mb-8">
-              <h1 className="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight text-sgma-charcoal">
+              <h1 className="text-h2 md:text-h1 font-black mb-2 uppercase tracking-tight text-sgma-charcoal">
                 Book a Session
               </h1>
-              <p className="text-sgma-charcoal text-sm font-light">
+              <p className="text-sgma-charcoal text-body font-light">
                 Schedule a personalized 1-on-1 guidance session with our instructors.
               </p>
             </div>
 
             <div className="bg-sgma-charcoal/10 backdrop-blur-sm border border-sgma-navy/20 rounded-lg p-4">
-              {!showFallback ? (
-                <div>
-                  <BookingWidget />
-                  <div className="text-center mt-4 pt-4 border-t border-sgma-navy/20">
-                    <p className="text-xs text-sgma-charcoal mb-2">Having trouble with the calendar?</p>
-                    <button
-                      onClick={() => setShowFallback(true)}
-                      className="text-sgma-cta hover:text-sgma-navy underline text-xs font-semibold transition-colors"
-                    >
-                      Use booking form instead
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div>
-                  <BookingWidget fallback={true} />
-                  <div className="text-center mt-4 pt-4 border-t border-sgma-navy/20">
-                    <button
-                      onClick={() => setShowFallback(false)}
-                      className="text-sgma-cta hover:text-sgma-navy underline text-xs font-semibold transition-colors"
-                    >
-                      Use Calendar instead
-                    </button>
-                  </div>
-                </div>
-              )}
+              <BookingWidget />
             </div>
 
             {/* Bookings & Sessions Info */}
             <div className="pt-8 border-t-2 border-sgma-navy/20">
-              <h3 className="text-2xl font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
+              <h3 className="text-h3 font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
                 <span className="text-sgma-cta">Bookings</span> & Sessions
               </h3>
-              <p className="text-sgma-charcoal leading-relaxed mb-6 text-sm">
+              <p className="text-sgma-charcoal leading-relaxed mb-6 text-body">
                 Online sacred geometry & mandala art workshops — hosted from India, open to participants worldwide. Secure your place with a deposit.
               </p>
-              <ul className="space-y-3 text-sgma-charcoal text-sm">
+              <ul className="space-y-3 text-sgma-charcoal text-body">
                 <li className="flex items-start gap-3 pl-2">
                   <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">✓</span>
                   <span className="pt-0.5">1-on-1 personalized guidance sessions</span>
@@ -140,7 +114,7 @@ export default function BookingsPage() {
       {/* Upcoming Workshops Section */}
       <div className="py-12 px-4 relative z-10 bg-sgma-charcoal/5">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-sgma-charcoal text-center">
+          <h2 className="text-h2 md:text-h1 font-black mb-8 uppercase tracking-tight text-sgma-charcoal text-center">
             Upcoming Workshops
           </h2>
 
@@ -151,43 +125,17 @@ export default function BookingsPage() {
                 <tr className="border-b-2 border-sgma-navy/30">
                   <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Workshop</th>
                   <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Date</th>
-                  <th className="text-left py-4 px-6 text-sgma-navy font-black uppercase text-sm tracking-wider">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
-                  <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
-                    📐 Sacred Geometry
-                  </td>
-                  <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">17–18 Jan</td>
-                  <td className="py-4 px-6">
-                    <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
-                      Book →
-                    </a>
-                  </td>
-                </tr>
-                <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
-                  <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
-                    🌸 Flower of Life
-                  </td>
-                  <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">12 Jan</td>
-                  <td className="py-4 px-6">
-                    <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
-                      Book →
-                    </a>
-                  </td>
-                </tr>
-                <tr className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
-                  <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
-                    🔄 Torus Foundations
-                  </td>
-                  <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">1 Feb</td>
-                  <td className="py-4 px-6">
-                    <a href="#booking-form" className="text-sgma-cta hover:text-sgma-navy font-bold transition-colors text-sm">
-                      Book →
-                    </a>
-                  </td>
-                </tr>
+                {COURSE_SESSIONS.map((session) => (
+                  <tr key={session.id} className="border-b border-sgma-navy/20 hover:bg-sgma-navy/5 transition-colors">
+                    <td className="py-4 px-6 text-sgma-charcoal font-bold text-sm">
+                      {session.icon} {session.name}
+                    </td>
+                    <td className="py-4 px-6 text-sgma-charcoal font-medium text-sm">{session.batchDate}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -198,19 +146,19 @@ export default function BookingsPage() {
       <div className="py-8 px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="mt-12 max-w-3xl">
-            <h3 className="text-2xl font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
+            <h3 className="text-h3 font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
               <span className="text-sgma-cta">Payment</span> Methods
             </h3>
 
             {/* Payment Methods Overview */}
             <div className="mb-8 pb-8 border-b-2 border-sgma-navy/20">
-              <p className="text-sgma-charcoal leading-relaxed mb-3 text-base">
+              <p className="text-sgma-charcoal leading-relaxed mb-3 text-body">
                 We accept international and Indian payment methods for your convenience:
               </p>
-              <p className="text-sgma-cta font-semibold text-base mb-3">
+              <p className="text-sgma-cta font-semibold text-body mb-3">
                 💳 Cards  •  🏦 Netbanking  •  📱 UPI  •  🌐 PayPal
               </p>
-              <p className="text-sgma-charcoal text-base">
+              <p className="text-sgma-charcoal text-body">
                 All transactions are secure and encrypted.
               </p>
             </div>
@@ -219,8 +167,8 @@ export default function BookingsPage() {
             <div className="grid md:grid-cols-2 gap-8 mb-8 pb-8 border-b-2 border-sgma-navy/20">
               {/* Bank Transfer */}
               <div>
-                <h4 className="text-lg font-bold text-sgma-cta mb-4 uppercase tracking-wide">💳 Bank Transfer</h4>
-                <div className="space-y-4 text-base">
+                <h4 className="text-h4 font-bold text-sgma-cta mb-4 uppercase tracking-wide">💳 Bank Transfer</h4>
+                <div className="space-y-4 text-body">
                   <div>
                     <p className="text-sgma-cta font-semibold text-sm uppercase tracking-wide mb-1">Account Name</p>
                     <p className="text-sgma-charcoal text-base">SGMA Studio</p>
@@ -242,13 +190,13 @@ export default function BookingsPage() {
 
               {/* UPI Payment */}
               <div>
-                <h4 className="text-lg font-bold text-sgma-cta mb-4 uppercase tracking-wide">📱 UPI Payment</h4>
+                <h4 className="text-h4 font-bold text-sgma-cta mb-4 uppercase tracking-wide">📱 UPI Payment</h4>
                 <div>
                   <p className="text-sgma-cta font-semibold text-sm uppercase tracking-wide mb-2">UPI ID</p>
-                  <p className="text-sgma-charcoal font-mono font-semibold mb-3 bg-sgma-charcoal/5 p-3 rounded border border-sgma-cta/20 text-base">
+                  <p className="text-sgma-charcoal font-mono font-semibold mb-3 bg-sgma-charcoal/5 p-3 rounded border border-sgma-cta/20 text-body">
                     yourupi@bank
                   </p>
-                  <p className="text-sgma-charcoal text-base leading-relaxed">
+                  <p className="text-sgma-charcoal text-body leading-relaxed">
                     Use your UPI app to scan and pay directly in your banking app.
                   </p>
                 </div>
@@ -256,8 +204,8 @@ export default function BookingsPage() {
             </div>
 
             {/* Important Note */}
-            <div className="bg-sgma-charcoal/5 border-l-4 border-sgma-cta pl-6 py-4 text-base">
-              <p className="text-sgma-charcoal leading-relaxed text-base">
+            <div className="bg-sgma-charcoal/5 border-l-4 border-sgma-cta pl-6 py-4 text-body">
+              <p className="text-sgma-charcoal leading-relaxed text-body">
                 <span className="text-sgma-cta font-semibold">📝 Important:</span> Include your name or booking reference in the payment description. Confirmation within 24 hours of payment.
               </p>
             </div>
@@ -265,11 +213,11 @@ export default function BookingsPage() {
 
           {/* Booking & Cancellation Policy */}
           <div className="mt-12 max-w-3xl border-t-2 border-sgma-navy/20 pt-12">
-            <h3 className="text-2xl font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
+            <h3 className="text-h3 font-bold mb-6 uppercase tracking-wide text-sgma-charcoal">
               <span className="text-sgma-cta">Booking</span> & Cancellation Policy
             </h3>
 
-            <ul className="space-y-3 text-sgma-charcoal text-base leading-relaxed">
+            <ul className="space-y-3 text-sgma-charcoal text-body leading-relaxed">
               <li className="flex items-start gap-3 pl-2">
                 <span className="text-sgma-cta font-bold flex-shrink-0 pt-0.5">•</span>
                 <span className="pt-0.5"><span className="font-semibold">Deposit Required:</span> Places are secured on receipt of a minimum <span className="font-semibold text-sgma-cta">50% course fee deposit</span>.</span>
@@ -293,7 +241,7 @@ export default function BookingsPage() {
             </ul>
 
             <div className="mt-8 pt-6 border-t border-sgma-cta/20">
-              <p className="text-sgma-charcoal text-base leading-relaxed">
+              <p className="text-sgma-charcoal text-body leading-relaxed">
                 <span className="text-sgma-cta font-semibold">Have Questions?</span> For details about our policies, please contact us directly. We're here to help and happy to discuss any concerns!
               </p>
             </div>

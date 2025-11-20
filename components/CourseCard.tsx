@@ -32,7 +32,7 @@ export default function CourseCard({ course }: { course: CourseData }) {
             <p className="text-2xl font-bold text-sgma-navy">
               ₹{course.price}
             </p>
-            <p className="text-xs text-sgma-charcoal/60">One-time payment</p>
+            <p className="text-xs text-sgma-charcoal/70">One-time payment</p>
           </div>
 
           <Link

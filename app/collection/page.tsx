@@ -15,6 +15,7 @@ export default function CollectionPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [selectedCollection, setSelectedCollection] = useState<string>('All')
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null)
+  const [expandedDescriptions, setExpandedDescriptions] = useState<Set<string>>(new Set())
 
   // Three main collections aligned with courses
   const portfolioItems: PortfolioItem[] = [
@@ -118,40 +119,6 @@ export default function CollectionPage() {
       longDescription: 'The Spirit mandala transcends the material realm and connects us to infinite consciousness, unity, and cosmic awareness. This celestial piece incorporates purples, silvers, and whites that evoke the vastness of space and the luminosity of awakened consciousness. Spirit represents our connection to all that is beyond the physical, our soul\'s purpose, and the divine source from which all creation flows. This mandala serves as a portal to higher dimensions of understanding and spiritual insight. Through contemplating this mandala, we remember our true nature as spiritual beings having a human experience.',
       collection: '8 Mandala Journey',
       image: '/images/portfolio-12.svg'
-    },
-
-    // Sankhya Mandala Collection
-    {
-      id: '13',
-      title: 'Sankhya I - Prakriti',
-      description: 'Nature principle mandala exploring primordial matter',
-      longDescription: 'Prakriti represents the primordial nature, the infinite creative potential from which all manifestation arises. This mandala visualizes the dance of matter and energy, showing how the formless becomes form. In Sankhya philosophy, Prakriti is the feminine principle of creation, the canvas upon which consciousness creates. The intricate patterns in this piece show how chaos and order interweave, how matter contains infinite complexity and beauty. Understanding Prakriti helps us recognize that everything we see is a temporary expression of infinite possibility.',
-      collection: 'Sankhya Mandala',
-      image: '/images/portfolio-13.svg'
-    },
-    {
-      id: '14',
-      title: 'Sankhya II - Purusha',
-      description: 'Consciousness principle mandala in sacred geometry',
-      longDescription: 'Purusha represents pure consciousness, the eternal witness that observes and illuminates all creation. Unlike Prakriti\'s dynamic nature, Purusha is the unchanging, transcendent principle. This mandala depicts the luminous center of being, the soul\'s essence. Purusha is the masculine principle, the light of awareness that gives meaning and consciousness to all experience. By meditating on this mandala, we recognize our own divine nature as eternal consciousness beyond the constantly changing physical world.',
-      collection: 'Sankhya Mandala',
-      image: '/images/portfolio-14.svg'
-    },
-    {
-      id: '15',
-      title: 'Sankhya III - Tattvas',
-      description: 'Twenty-five principles of creation visualized',
-      longDescription: 'The Tattvas are the 25 fundamental principles that bridge consciousness and matter in Sankhya philosophy. This complex mandala attempts to visualize all these principles in relationship: from the most subtle (pure consciousness) to the most gross (physical elements). The Tattvas show how spirit gradually densifies into matter through various intermediate states. Understanding the Tattvas provides a map of reality and consciousness, showing that everything from thought to stone is made of the same cosmic substance in different degrees of manifestation.',
-      collection: 'Sankhya Mandala',
-      image: '/images/portfolio-15.svg'
-    },
-    {
-      id: '16',
-      title: 'Sankhya IV - Cosmic Unity',
-      description: 'Unity of consciousness and nature in mandala form',
-      longDescription: 'This final mandala celebrates the ultimate truth of Sankhya: the unity of Purusha (consciousness) and Prakriti (nature) in cosmic dance. While these two principles are fundamentally distinct, they exist in eternal relationship, each giving meaning and fullness to the other. This mandala shows how every individual consciousness (Purusha) is eternally linked to the cosmic creative force (Prakriti). By recognizing this unity within ourselves, we transcend the illusion of separation and realize our fundamental interconnection with all existence. This mandala represents the culmination of Sankhya wisdom.',
-      collection: 'Sankhya Mandala',
-      image: '/images/portfolio-16.svg'
     }
   ]
 
@@ -162,7 +129,7 @@ export default function CollectionPage() {
     : portfolioItems.filter(item => item.collection === selectedCollection)
 
   return (
-    <div className="min-h-screen bg-sgma-beige relative text-sgma-charcoal">
+    <div className="min-h-screen bg-gradient-to-b from-sgma-beige via-sgma-beige/40 to-sgma-beige/10 relative text-sgma-charcoal">
       {/* Sri Chakra Mandala Background */}
       <div className="fixed inset-0 opacity-5 pointer-events-none z-0">
         <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -219,14 +186,14 @@ export default function CollectionPage() {
         </svg>
       </div>
 
-      <div className="py-20 px-4 relative z-10">
+      <div className="py-8 px-4 relative z-10">
         {/* Page Header */}
         <div className="max-w-6xl mx-auto mb-16">
-          <h1 className="text-5xl md:text-6xl font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">
+          <h1 className="text-h1 md:text-display-sm font-black text-center mb-4 uppercase tracking-tight text-sgma-charcoal">
             Our Collections
           </h1>
-          <p className="text-center text-sgma-charcoal-200 text-lg max-w-3xl mx-auto">
-            Explore curated collections from Flower of Life Mastery, Sacred Torus Foundations, and 8 Mandala Journey. Each collection showcases the depth and transformative practice of sacred geometry and mandala creation.
+          <p className="text-center text-sgma-charcoal-200 text-body-lg max-w-3xl mx-auto">
+            Explore curated collections from Flower of Life Mastery, Sacred Torus Foundations, and the 8 Mandala Journey. Each collection showcases the depth and transformative practice of sacred geometry and mandala creation.
           </p>
         </div>
 
@@ -237,7 +204,7 @@ export default function CollectionPage() {
               <button
                 key={collection}
                 onClick={() => setSelectedCollection(collection)}
-                className={`px-6 py-2 rounded-lg font-semibold uppercase tracking-widest text-sm transition-all duration-300 ${
+                className={`px-6 py-2 rounded-lg font-semibold uppercase tracking-widest text-caption transition-all duration-300 ${
                   selectedCollection === collection
                     ? 'bg-sgma-cta text-white shadow-lg shadow-sgma-cta/50'
                     : 'bg-white/60 border-2 border-sgma-cta/30 text-sgma-cta hover:border-sgma-cta'
@@ -251,71 +218,151 @@ export default function CollectionPage() {
 
         {/* Portfolio Grid */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredItems.map(item => (
-              <div
-                key={item.id}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer"
-                onMouseEnter={() => setHoveredId(item.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                onClick={() => setSelectedItem(item)}
-              >
-                {/* Card Container */}
-                <div className="relative w-full h-80 bg-sgma-charcoal/10 flex items-center justify-center overflow-hidden rounded-2xl">
-                  {/* Background Image */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 z-10"
-                  />
+          {selectedCollection === 'All' ? (
+            // Grouped view by collection
+            <div className="space-y-12">
+              {['8 Mandala Journey', 'Flower of Life Mastery', 'Sacred Torus Foundations'].map(collectionName => (
+                <div key={collectionName}>
+                  <h2 className="text-h2 md:text-h1 font-black mb-8 uppercase tracking-tight text-sgma-charcoal">
+                    {collectionName}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {portfolioItems
+                      .filter(item => item.collection === collectionName)
+                      .map(item => (
+                        <div
+                          key={item.id}
+                          className="group cursor-pointer"
+                          onMouseEnter={() => setHoveredId(item.id)}
+                          onMouseLeave={() => setHoveredId(null)}
+                          onClick={() => setSelectedItem(item)}
+                        >
+                          {/* Card Container */}
+                          <div className="relative w-full h-80 bg-sgma-charcoal/10 flex items-center justify-center overflow-hidden rounded-2xl">
+                            {/* Background Image */}
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 z-10"
+                            />
 
-                  {/* Placeholder Mandala Icon (fallback) */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-sgma-beige/50 z-0">
-                    <div className="text-6xl opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                      🌀
-                    </div>
+                            {/* Placeholder Mandala Icon (fallback) */}
+                            <div className="absolute inset-0 flex items-center justify-center bg-sgma-beige/50 z-0">
+                              <div className="text-6xl opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                                🌀
+                              </div>
+                            </div>
+
+                            {/* Gradient Overlay Background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/5 to-sgma-navy/5 z-20"></div>
+
+                            {/* Text Overlay - Appears on Hover */}
+                            <div
+                              className={`absolute inset-0 flex flex-col items-start justify-end p-6 bg-gradient-to-t from-sgma-navy/95 via-sgma-navy/70 to-transparent transition-all duration-300 z-30 ${
+                                hoveredId === item.id ? 'opacity-100' : 'opacity-0'
+                              }`}
+                            >
+                              <div className="inline-block mb-3 px-3 py-1 bg-sgma-cta/20 rounded-full border border-sgma-cta/50">
+                                <p className="text-caption font-bold text-sgma-cta uppercase tracking-widest">
+                                  {item.collection}
+                                </p>
+                              </div>
+                              <p className="text-body text-white/80 line-clamp-2">
+                                {item.description}
+                              </p>
+                            </div>
+
+                            {/* Floating Badge - Always Visible */}
+                            <div className="absolute top-4 right-4 px-3 py-2 bg-sgma-cta rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <span className="text-white font-bold text-xs uppercase tracking-widest">
+                                View
+                              </span>
+                            </div>
+
+                            {/* Border Glow on Hover */}
+                            <div className="absolute inset-0 border-2 border-sgma-cta opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                          </div>
+
+                          {/* Title Below Image - Always Visible (SEO) */}
+                          <h3 className="text-h4 font-black uppercase tracking-wide mt-4 mb-2 text-sgma-charcoal">
+                            {item.title}
+                          </h3>
+                        </div>
+                      ))}
                   </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            // Non-grouped view for specific collections
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredItems.map(item => (
+                <div
+                  key={item.id}
+                  className="group cursor-pointer"
+                  onMouseEnter={() => setHoveredId(item.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onClick={() => setSelectedItem(item)}
+                >
+                  {/* Card Container */}
+                  <div className="relative w-full h-80 bg-sgma-charcoal/10 flex items-center justify-center overflow-hidden rounded-2xl">
+                    {/* Background Image */}
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 z-10"
+                    />
 
-                  {/* Gradient Overlay Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/5 to-sgma-navy/5 z-20"></div>
+                    {/* Placeholder Mandala Icon (fallback) */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-sgma-beige/50 z-0">
+                      <div className="text-6xl opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                        🌀
+                      </div>
+                    </div>
 
-                  {/* Text Overlay - Appears on Hover */}
-                  <div
-                    className={`absolute inset-0 flex flex-col items-start justify-end p-6 bg-gradient-to-t from-sgma-navy/95 via-sgma-navy/70 to-transparent transition-all duration-300 z-30 ${
-                      hoveredId === item.id ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  >
-                    <div className="inline-block mb-3 px-3 py-1 bg-sgma-cta/20 rounded-full border border-sgma-cta/50">
-                      <p className="text-xs font-bold text-sgma-cta uppercase tracking-widest">
-                        {item.collection}
+                    {/* Gradient Overlay Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/5 to-sgma-navy/5 z-20"></div>
+
+                    {/* Text Overlay - Appears on Hover */}
+                    <div
+                      className={`absolute inset-0 flex flex-col items-start justify-end p-6 bg-gradient-to-t from-sgma-navy/95 via-sgma-navy/70 to-transparent transition-all duration-300 z-30 ${
+                        hoveredId === item.id ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      <div className="inline-block mb-3 px-3 py-1 bg-sgma-cta/20 rounded-full border border-sgma-cta/50">
+                        <p className="text-caption font-bold text-sgma-cta uppercase tracking-widest">
+                          {item.collection}
+                        </p>
+                      </div>
+                      <p className="text-body text-white/80 line-clamp-2">
+                        {item.description}
                       </p>
                     </div>
-                    <h3 className="text-xl font-black uppercase tracking-wide mb-2 text-white leading-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-white/80 line-clamp-2">
-                      {item.description}
-                    </p>
+
+                    {/* Floating Badge - Always Visible */}
+                    <div className="absolute top-4 right-4 px-3 py-2 bg-sgma-cta rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-white font-bold text-xs uppercase tracking-widest">
+                        View
+                      </span>
+                    </div>
+
+                    {/* Border Glow on Hover */}
+                    <div className="absolute inset-0 border-2 border-sgma-cta opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                   </div>
 
-                  {/* Floating Badge - Always Visible */}
-                  <div className="absolute top-4 right-4 px-3 py-2 bg-sgma-cta rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white font-bold text-xs uppercase tracking-widest">
-                      View
-                    </span>
-                  </div>
-
-                  {/* Border Glow on Hover */}
-                  <div className="absolute inset-0 border-2 border-sgma-cta opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                  {/* Title Below Image - Always Visible (SEO) */}
+                  <h3 className="text-h4 font-black uppercase tracking-wide mt-4 mb-2 text-sgma-charcoal">
+                    {item.title}
+                  </h3>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
 
-          {/* Empty State */}
-          {filteredItems.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-sgma-charcoal-300 text-lg">No works found in this category.</p>
+              {/* Empty State */}
+              {filteredItems.length === 0 && (
+                <div className="text-center py-20">
+                  <p className="text-sgma-charcoal-300 text-lg">No works found in this category.</p>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -351,7 +398,7 @@ export default function CollectionPage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-sgma-cta/5 to-sgma-navy/5"></div>
                   </div>
                   <div className="inline-block px-4 py-2 bg-sgma-cta/20 rounded-lg border border-sgma-cta/50">
-                    <p className="text-sgma-cta font-bold uppercase tracking-widest text-sm">
+                    <p className="text-sgma-cta font-bold uppercase tracking-widest text-caption">
                       {selectedItem.collection}
                     </p>
                   </div>
@@ -359,29 +406,40 @@ export default function CollectionPage() {
 
                 {/* Text Section */}
                 <div className="flex flex-col justify-start">
-                  <h2 className="text-4xl font-black uppercase tracking-tight mb-4 text-sgma-navy">
+                  <h3 className="text-h2 font-black uppercase tracking-tight mb-4 text-sgma-navy">
                     {selectedItem.title}
-                  </h2>
+                  </h3>
                   <p className="text-lg text-sgma-cta font-semibold mb-6 leading-relaxed">
                     {selectedItem.description}
                   </p>
-                  <div className="border-t border-sgma-navy/20 pt-6">
-                    <h3 className="text-sm font-bold uppercase tracking-widest text-sgma-navy mb-4">
-                      About This Work
-                    </h3>
-                    <p className="text-sgma-charcoal leading-relaxed text-base">
+                  <div className="border-t border-sgma-navy/20 pt-6 mb-6">
+                    <p className={`text-sgma-charcoal leading-relaxed text-body ${expandedDescriptions.has(selectedItem.id) ? '' : 'line-clamp-3'}`}>
                       {selectedItem.longDescription}
                     </p>
+                    <button
+                      onClick={() => {
+                        const newExpanded = new Set(expandedDescriptions)
+                        if (newExpanded.has(selectedItem.id)) {
+                          newExpanded.delete(selectedItem.id)
+                        } else {
+                          newExpanded.add(selectedItem.id)
+                        }
+                        setExpandedDescriptions(newExpanded)
+                      }}
+                      className="mt-2 text-sgma-cta font-semibold text-sm hover:underline transition-colors"
+                    >
+                      {expandedDescriptions.has(selectedItem.id) ? '− Less' : '+ More'}
+                    </button>
                   </div>
 
                   {/* Related Course CTA */}
-                  <div className="mt-8 pt-6 border-t border-sgma-navy/20">
-                    <p className="text-sm text-sgma-charcoal mb-4">
-                      Want to learn how to create works like this?
+                  <div className="pt-2 border-t border-sgma-navy/20">
+                    <p className="text-sm text-sgma-charcoal mb-3 font-semibold">
+                      Want to create mandala art?
                     </p>
                     <a
                       href="/courses"
-                      className="inline-block px-6 py-3 bg-sgma-cta text-white rounded-lg font-black uppercase tracking-widest hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300"
+                      className="inline-block px-6 py-3 bg-sgma-cta text-white rounded-lg font-black uppercase tracking-widest hover:shadow-lg hover:shadow-sgma-cta/50 transition-all duration-300 w-full text-center"
                     >
                       Explore Courses
                     </a>
@@ -397,11 +455,11 @@ export default function CollectionPage() {
 
         {/* CTA Section */}
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-black uppercase tracking-tight mb-6 text-sgma-charcoal">
+          <h2 className="text-h2 font-black uppercase tracking-tight mb-6 text-sgma-charcoal">
             Ready to Explore Your<span className="text-sgma-cta"> Journey</span>?
           </h2>
-          <p className="text-sgma-charcoal-200 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-            Discover the transformative power of Vedic science, sacred geometry, and mandala creation. Our three comprehensive courses guide you through deepening your practice and artistic expression. Begin your journey today.
+          <p className="text-sgma-charcoal-200 text-body-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+            Discover the transformative power of Vedic science, sacred geometry, and mandala creation. Our comprehensive courses guide you through deepening your practice and artistic expression. Begin your journey today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

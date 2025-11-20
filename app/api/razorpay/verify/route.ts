@@ -1,9 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
 import { addPayment } from '@/lib/google-sheets'
+import { isRateLimited, getClientIp, RATE_LIMIT_CONFIG } from '@/lib/rate-limiter'
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limiting check
+    const clientIp = getClientIp(req)
+    const { limit, windowMs } = RATE_LIMIT_CONFIG.VERIFY_PAYMENT
+
+    if (isRateLimited(clientIp, limit, windowMs)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
+    }
+
     const body = await req.json()
     const { orderId, paymentId, signature, courseId, courseName, email, amount } = body
 
